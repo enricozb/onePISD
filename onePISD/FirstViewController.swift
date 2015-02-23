@@ -13,15 +13,7 @@ class FirstViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		View.currentView = self
-		let courses = MainSession.session.courses()!
-		
-		for course in courses {
-			println(course.enrollmentID)
-			for grade in course.grades {
-				println("\(grade.grade) \(grade.termID)")
-			}
-			println()
-		}
+		//View.loadView(Storyboard.TestView, fromView: self)
 	}
 	
 	override func didReceiveMemoryWarning() {

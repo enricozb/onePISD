@@ -11,6 +11,7 @@ import UIKit
 public struct Storyboard {
 	static let Login = "LoginView"
 	static let GradeSummary = "MainTabView"
+	static let TestView = "TestView"
 }
 
 public class View: NSObject {

@@ -115,6 +115,7 @@ class Session {
 			"H"				: "G"	//No idea what this is, but it's in the form
 		]
 		let url = "\(url_gradeassignments) "
+		View.showWaitOverlayWithText("Loading Assignments")
 		self.manager.request(.GET, url_gradeassignments, parameters: params).responseString {
 			(request, response, html_data, error) in
 			

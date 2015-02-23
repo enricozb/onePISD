@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginView : UIViewController {
+class LoginView : UIViewController, UITextFieldDelegate {
 	
 	let backgroundColor = UIColor(red: 0.290196078, green: 0.392156863, blue: 0.568627451, alpha: 1)
 	
@@ -32,6 +32,34 @@ class LoginView : UIViewController {
 				View.loadView(Storyboard.GradeSummary, fromView: self)
 			}
 		}
+		
+		usernameTextField.delegate = self
+		passwordTextField.delegate = self
+		
+	}
+	
+	func textFieldShouldReturn(textField: UITextField!) -> Bool {
+		self.view.endEditing(true);
+		return true;
+	}
+	
+	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+		self.view.endEditing(true);
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.view.backgroundColor = self.backgroundColor
+		View.currentView = self
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
 	}
 	
 	private func notifyWrongCredentials() {
@@ -62,17 +90,4 @@ class LoginView : UIViewController {
 		textFieldBackground.layer.addAnimation(textanimation, forKey: "position")
 	}
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.view.backgroundColor = self.backgroundColor
-		View.currentView = self
-	}
-	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-	}
-	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-	}
 }

@@ -147,7 +147,7 @@ class Parser {
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 	
-		let period = (stringBuffer! as String).toInt()!
+		let period = (stringBuffer as String).toInt()!
 		var grades = [Grade]()
 	
 		scanner.scanUpToString("<td", intoString: nil) //Begin grade grabbing
