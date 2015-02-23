@@ -38,7 +38,7 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as UITableViewCell
 		let row = indexPath.row
 		cell.textLabel?.text = assignments[row].name
-		
+		cell.detailTextLabel?.text = assignments[row].category
 		return cell
 	}
 	
@@ -57,6 +57,9 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 			
 		}
 		
+		self.edgesForExtendedLayout = UIRectEdge.All
+		assignmentTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, self.tabBarController!.tabBar.frame.height, 0);
+
 		assignmentTableView.delegate = self
 		assignmentTableView.dataSource = self
 	}
