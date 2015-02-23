@@ -73,6 +73,12 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 		
 		let termDescription = getTermLabel(row)
 		cell.termLabel?.text = "\(termDescription) \(MainSession.session.courses()![section].grades[row].grade)"
+		if (row + 1) % 5 == 0 {
+			cell.accessoryType = UITableViewCellAccessoryType.None
+		}
+		else {
+			cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+		}
 		return cell
 	}
 	

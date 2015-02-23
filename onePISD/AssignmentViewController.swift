@@ -54,7 +54,6 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 			View.clearOverlays()
 			self.assignments = self.grade!.assignments!
 			self.assignmentTableView.reloadData()
-			
 		}
 		
 		self.edgesForExtendedLayout = UIRectEdge.All

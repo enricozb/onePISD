@@ -65,9 +65,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rW0-Hx-1Ua">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rW0-Hx-1Ua">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="8uf-QA-LF8"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignmentCell" textLabel="V5k-lO-Vsq" detailTextLabel="VTv-ip-wsx" style="IBUITableViewCellStyleSubtitle" id="LUX-2F-Smy">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -90,9 +93,20 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8uf-QA-LF8"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="rW0-Hx-1Ua" secondAttribute="bottom" constant="-49" id="47Z-iF-vcc"/>
+                            <constraint firstItem="rW0-Hx-1Ua" firstAttribute="leading" secondItem="Jym-QY-EGy" secondAttribute="leading" id="JBx-DY-N8D"/>
+                            <constraint firstAttribute="trailing" secondItem="rW0-Hx-1Ua" secondAttribute="trailing" id="SbP-kJ-O1G"/>
+                            <constraint firstItem="rW0-Hx-1Ua" firstAttribute="top" secondItem="Jym-QY-EGy" secondAttribute="top" id="dB3-ZC-8Ay"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="assignmentTableView" destination="rW0-Hx-1Ua" id="TNP-xG-U4a"/>
@@ -346,7 +360,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-mZ-qUi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="571"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseGradeCell" rowHeight="80" id="P8e-0d-3b0" customClass="GradeCell" customModule="onePISD" customModuleProvider="target">
@@ -379,12 +393,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="J0N-mZ-qUi" secondAttribute="bottom" constant="-49" id="3LN-yL-xoM"/>
                             <constraint firstItem="J0N-mZ-qUi" firstAttribute="top" secondItem="IKI-wi-ar2" secondAttribute="top" id="6kc-rw-ERC"/>
+                            <constraint firstItem="J0N-mZ-qUi" firstAttribute="top" secondItem="IKI-wi-ar2" secondAttribute="top" id="7Qx-uA-m4R"/>
+                            <constraint firstItem="J0N-mZ-qUi" firstAttribute="leading" secondItem="IKI-wi-ar2" secondAttribute="leading" id="9ME-I0-rA9"/>
+                            <constraint firstAttribute="trailing" secondItem="J0N-mZ-qUi" secondAttribute="trailing" id="EvG-oW-nnZ"/>
                             <constraint firstAttribute="trailing" secondItem="J0N-mZ-qUi" secondAttribute="trailing" id="JbL-Kq-AuE"/>
-                            <constraint firstAttribute="centerY" secondItem="J0N-mZ-qUi" secondAttribute="centerY" constant="-10" id="KUZ-7B-6iE"/>
-                            <constraint firstAttribute="centerX" secondItem="J0N-mZ-qUi" secondAttribute="centerX" id="j9c-e5-qej"/>
-                            <constraint firstItem="J0N-mZ-qUi" firstAttribute="leading" secondItem="IKI-wi-ar2" secondAttribute="leading" id="lWG-XF-XUj"/>
+                            <constraint firstItem="J0N-mZ-qUi" firstAttribute="leading" secondItem="IKI-wi-ar2" secondAttribute="leading" id="U6F-mH-dCE"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="J0N-mZ-qUi" secondAttribute="bottom" constant="-49" id="V3g-YM-bNJ"/>
+                            <constraint firstAttribute="trailing" secondItem="J0N-mZ-qUi" secondAttribute="trailing" id="rS3-lv-xGf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3LN-yL-xoM"/>
+                                <exclude reference="6kc-rw-ERC"/>
+                                <exclude reference="EvG-oW-nnZ"/>
+                                <exclude reference="JbL-Kq-AuE"/>
+                                <exclude reference="U6F-mH-dCE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Cja-QT-cBP"/>
                     <connections>
@@ -393,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUV-cc-tCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2659" y="-965"/>
+            <point key="canvasLocation" x="2666" y="-965"/>
         </scene>
         <!--Item-->
         <scene sceneID="eS1-bo-ZVv">
