@@ -48,9 +48,15 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 		super.viewDidLoad()
 		View.currentView = self
 		self.navigationItem.title = "\(grade!.course!.name)"
-		MainSession.session.loadAssignmentsForGrade(self.grade!) {
-			(response, html_data, error) in
-			View.clearOverlays()
+		if grade?.assignments == nil {
+			MainSession.session.loadAssignmentsForGrade(self.grade!) {
+				(response, html_data, error) in
+				View.clearOverlays()
+				self.assignments = self.grade!.assignments!
+				self.assignmentTableView.reloadData()
+			}
+		}
+		else {
 			self.assignments = self.grade!.assignments!
 			self.assignmentTableView.reloadData()
 		}
