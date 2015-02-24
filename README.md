@@ -8,6 +8,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 ## To Do
 
 ### Session.swift
+![Progress](http://progressed.io/bar/44)
 - [ ] Remove the way View and Session are intertwined.
 - [ ] Add storage mechanism for fields
 	- [x] Grades
@@ -19,6 +20,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 	- [ ] PISD issues (timeout)
 
 ### Parser.swift
+![Progress](http://progressed.io/bar/14)
 - [ ] Parse individual assignments
 	- [x] Grade
 	- [x] Category
@@ -33,8 +35,10 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Rewrite and polish for clarity (may never be checked)
 
 ### Features
+![Progress](http://progressed.io/bar/36)
 - [X] Display Grade Summary
-- [X] Display individual assignments
+- [ ] Display individual assignments
+	- [X] Display category and grade
 	- [ ] Sort individual assignments by date, category, or weight
 - [ ] Display Attendance summary
 - [ ] Grade calculation features
