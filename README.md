@@ -33,8 +33,8 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Rewrite and polish for clarity (may never be checked)
 
 ### Features
-- [ ] Display Grade Summary
-- [ ] Display individual assignments
+- [X] Display Grade Summary
+- [X] Display individual assignments
 	- [ ] Sort individual assignments by date, category, or weight
 - [ ] Display Attendance summary
 - [ ] Grade calculation features
