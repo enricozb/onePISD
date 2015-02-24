@@ -9,11 +9,11 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 
 ### Session.swift
 ![Progress](http://progressed.io/bar/44)
+
 - [ ] Remove the way View and Session are intertwined.
-- [ ] Add storage mechanism for fields
+- [x] Add storage mechanism for fields
 	- [x] Grades
 	- [x] StudendId
-	- [ ] Login Tickets
 - [ ] Error handling/notification during requests
 	- [x] Wrong Password
 	- [x] No Internet connection
@@ -21,6 +21,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 
 ### Parser.swift
 ![Progress](http://progressed.io/bar/14)
+
 - [ ] Parse individual assignments
 	- [x] Grade
 	- [x] Category
@@ -32,16 +33,22 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Grab Teacher information
 - [ ] ```inout``` parameter types for forms
 - [ ] Guarantee support for semester and 1.5 credit courses
+- [ ] Fix slow NSScanner and substring performance
 - [ ] Rewrite and polish for clarity (may never be checked)
 
 ### Features
 ![Progress](http://progressed.io/bar/36)
-- [X] Display Grade Summary
+
+- [x] Display Grade Summary
 - [ ] Display individual assignments
-	- [X] Display category and grade
+	- [x] Display category and grade
 	- [ ] Sort individual assignments by date, category, or weight
 - [ ] Display Attendance summary
 - [ ] Grade calculation features
 	- [ ] Semester Exam prediction for "maxing"
 	- [ ] Calculate required Major grade for desired six weeks grade
 
+### General
+
+- [ ] Create UIViewController subclass to extend all app views from
+- [ ] Finalize UI 
