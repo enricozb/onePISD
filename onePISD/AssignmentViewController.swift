@@ -48,7 +48,6 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 		super.viewDidLoad()
 		View.currentView = self
 		self.navigationItem.title = "\(grade!.course!.name)"
-		View.showWaitOverlayWithText("Loading Assignments")
 		MainSession.session.loadAssignmentsForGrade(self.grade!) {
 			(response, html_data, error) in
 			View.clearOverlays()

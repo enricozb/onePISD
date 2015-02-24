@@ -12,7 +12,9 @@
 	_	support for semester courses, and for dropped/1.5 credit courses
 	_	rewrite some shit
 */
+
 import Foundation
+import UIKit
 
 class Parser {
 	class func getLTfromHTML(html: String) -> String {
@@ -136,6 +138,7 @@ class Parser {
 	// MARK: Private class methods
 	
 	private class func extractCourse(html: String) -> (Course?, Int?){
+		println(html)
 		let scanner = NSScanner(string: html)
 		var stringBuffer: NSString?
 		
@@ -181,7 +184,7 @@ class Parser {
 	private class func extractClassTitleAndID(html: String) -> (String, Int) {
 		// Comes in as <a href="javascript:ClassDetails.getClassDetails(...);">CLASS TITLE</a></th> (...) is enrollementID
 		var substring: String = html.substringFromIndex(html.rangeOfString(">")!.endIndex)
-		let title =  substring.substringToIndex(substring.rangeOfString("<")!.startIndex)
+		let title =  decodeString(substring.substringToIndex(substring.rangeOfString("<")!.startIndex))
 		
 		substring = html.substringFromIndex(html.rangeOfString("(")!.endIndex)
 		let enrollmentID = substring.substringToIndex(substring.rangeOfString(")")!.startIndex).toInt()!
@@ -246,20 +249,20 @@ class Parser {
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 		
-		let title = stringBuffer!
+		let title = decodeString(stringBuffer!)
 		
 		scanner.scanString("</a></td>", intoString: nil)
 		scanner.scanUpToString(">", intoString: nil)
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 		
-		let date = stringBuffer!
+		let date = decodeString(stringBuffer!)
 		
 		scanner.scanUpToString("<td>", intoString: nil)
 		scanner.scanString("<td>", intoString: nil)
 		scanner.scanUpToString("</td>", intoString: &stringBuffer)
 		
-		let category = stringBuffer!
+		let category = decodeString(stringBuffer!)
 		
 		scanner.scanUpToString("<td class=\"grade\">", intoString: nil)
 		scanner.scanString("<td class=\"grade\">", intoString: nil)
@@ -268,5 +271,14 @@ class Parser {
 		let grade = (stringBuffer as String).toInt()
 		
 		return Assignment(name: title, date: date, category: category, grade: grade, assignmentID: assignmentID)
+	}
+	
+	private class func decodeString(string: String) -> String {
+		let encodedData = string.dataUsingEncoding(NSUTF8StringEncoding)!
+		let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+		let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)
+		
+		let decodedString = attributedString!.string
+		return decodedString
 	}
 }

@@ -21,7 +21,7 @@ import UIKit
 		
 	error handling (no connection, wrong password, etc)
 		*	wrong password
-		_	no internet connection
+		*	no internet connection
 		_	PISD problems (timeout)
 	
 	add functions

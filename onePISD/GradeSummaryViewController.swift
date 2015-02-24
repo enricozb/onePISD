@@ -64,6 +64,7 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	// MARK: DataSource Methods
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let standardcell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: NSIndexPath(forItem: 0, inSection: 1)) as GradeCell
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as GradeCell
 		let section = indexPath.section
 		let row = indexPath.row
@@ -72,7 +73,11 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 		let term = firstTerm - MainSession.session.courses()![section].grades[row].termID
 		
 		let termDescription = getTermLabel(row)
-		cell.termLabel?.text = "\(termDescription) \(MainSession.session.courses()![section].grades[row].grade)"
+		cell.termLabel?.text = "\(termDescription)"
+		cell.gradeLabel?.text = "-"
+		if let grade = MainSession.session.courses()![section].grades[row].grade {
+			cell.gradeLabel?.text = "\(grade)"
+		}
 		if (row + 1) % 5 == 0 {
 			cell.accessoryType = UITableViewCellAccessoryType.None
 		}

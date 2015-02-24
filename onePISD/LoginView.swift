@@ -49,7 +49,6 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		self.view.backgroundColor = self.backgroundColor
 		View.currentView = self
 	}

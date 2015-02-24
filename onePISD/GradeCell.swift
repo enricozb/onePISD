@@ -11,4 +11,5 @@ import UIKit
 
 class GradeCell : UITableViewCell {
 	@IBOutlet var termLabel: UILabel!
+	@IBOutlet var gradeLabel: UILabel!
 }
