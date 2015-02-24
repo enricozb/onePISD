@@ -12,11 +12,11 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Add storage mechanism for fields
 	- [x] Grades
 	- [x] StudendId
-	- [] Login Tickets
+	- [ ] Login Tickets
 - [ ] Error handling/notification during requests
 	- [x] Wrong Password
 	- [x] No Internet connection
-	- [] PISD issues (timeout)
+	- [ ] PISD issues (timeout)
 
 ### Parser.swift
 - [ ] Parse individual assignments
