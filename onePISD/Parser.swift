@@ -151,7 +151,6 @@ class Parser {
 	
 		let period = (stringBuffer as String).toInt()!
 		var grades = [Grade]()
-	
 		scanner.scanUpToString("<td", intoString: nil) //Begin grade grabbing
 		
 		if scanner.scanString("<td class=\"disabledCell\"", intoString: nil) {

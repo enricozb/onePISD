@@ -32,4 +32,12 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Guarantee support for semester and 1.5 credit courses
 - [ ] Rewrite and polish for clarity (may never be checked)
 
+### Features
+- [ ] Display Grade Summary
+- [ ] Display individual assignments
+	- [ ] Sort individual assignments by date, category, or weight
+- [ ] Display Attendance summary
+- [ ] Grade calculation features
+	- [ ] Semester Exam prediction for "maxing"
+	- [ ] Calculate required Major grade for desired six weeks grade
 

@@ -38,6 +38,7 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as UITableViewCell
 		let row = indexPath.row
 		cell.textLabel?.text = assignments[row].name
+		cell.textLabel?.adjustsFontSizeToFitWidth = true
 		cell.detailTextLabel?.text = assignments[row].category
 		return cell
 	}
