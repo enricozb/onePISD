@@ -49,12 +49,19 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 			if let destination = segue.destinationViewController as? AssignmentViewController {
 				if let section = courseTableView.indexPathForSelectedRow()?.section {
 					if let row = courseTableView.indexPathForSelectedRow()?.row {
-						let courses = MainSession.session.courses()!
-						destination.grade = courses[section].grades[row]
+						if shouldPerformSegueWithIdentifier(segueId, sender: sender) {
+							let courses = MainSession.session.courses()!
+							destination.grade = courses[section].grades[row]
+						}
 					}
 				}
 			}
 		}
+	}
+	
+	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+		let row = courseTableView.indexPathForSelectedRow()!.row
+		return (row + 1) % 5 != 0
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
