@@ -28,7 +28,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 	- [ ] Grade Weight value
 	- [ ] Comment
 - [ ] Grab Teacher information
-- [ ] 'inout' parameter types for forms
+- [ ] ```inout``` parameter types for forms
 - [ ] Guarantee support for semester and 1.5 credit courses
 - [ ] Rewrite and polish for clarity (may never be checked)
 
