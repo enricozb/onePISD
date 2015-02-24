@@ -50,7 +50,6 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.view.backgroundColor = self.backgroundColor
-		View.currentView = self
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -59,6 +58,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
+		View.currentView = self
 	}
 	
 	private func notifyWrongCredentials() {

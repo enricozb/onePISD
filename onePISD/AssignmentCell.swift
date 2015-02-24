@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class AssignmentCell : UITableViewCell {
-	
+	@IBOutlet var titleLabel: UILabel!
+	@IBOutlet var categoryLabel: UILabel!
+	@IBOutlet var gradeLabel: UILabel!
 }

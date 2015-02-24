@@ -35,11 +35,15 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 	let cellId = "AssignmentCell"
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as AssignmentCell
 		let row = indexPath.row
-		cell.textLabel?.text = assignments[row].name
-		cell.textLabel?.adjustsFontSizeToFitWidth = true
-		cell.detailTextLabel?.text = assignments[row].category
+		cell.titleLabel?.text = assignments[row].name
+		cell.titleLabel?.adjustsFontSizeToFitWidth = true
+		cell.categoryLabel?.text = assignments[row].category
+		cell.gradeLabel?.text = "-"
+		if let grade = assignments[row].grade {
+			cell.gradeLabel?.text = "\(grade)"
+		}
 		return cell
 	}
 	
@@ -67,6 +71,11 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 
 		assignmentTableView.delegate = self
 		assignmentTableView.dataSource = self
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		View.currentView = self
 	}
 	
 	override func didReceiveMemoryWarning() {

@@ -14,6 +14,7 @@ class Assignment {
 	let category: String
 	let grade: Int?
 	let assignmentID: Int
+	let weight : Int?
 	let comment: String? //Not currently used
 	
 	

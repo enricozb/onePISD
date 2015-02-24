@@ -168,11 +168,8 @@ class Parser {
 				}
 				grades.append(Grade(termID: tid, grade: grade))
 			}
-			else if grade != -1 {
-				grades.append(Grade(termID: i/5, grade: grade))
-			}
 			else {
-				grades.append(Grade(blank: true))
+				grades.append(Grade(termID: i/5, grade: grade))
 			}
 			scanner.scanUpToString("<td", intoString: nil)
 		}

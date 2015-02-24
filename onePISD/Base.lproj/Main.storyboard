@@ -72,25 +72,104 @@
                                     <constraint firstAttribute="width" constant="600" id="8uf-QA-LF8"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignmentCell" textLabel="V5k-lO-Vsq" detailTextLabel="VTv-ip-wsx" style="IBUITableViewCellStyleSubtitle" id="LUX-2F-Smy">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignmentCell" rowHeight="45" id="LUX-2F-Smy" customClass="AssignmentCell" customModule="onePISD" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUX-2F-Smy" id="VTB-zA-J0A">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V5k-lO-Vsq">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO6-Bu-K3E">
+                                                    <rect key="frame" x="13" y="3" width="517" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="8fZ-jF-yVd"/>
+                                                        <constraint firstAttribute="height" constant="21" id="fok-0l-xus"/>
+                                                        <constraint firstAttribute="width" constant="495" id="kbA-am-02s"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="8fZ-jF-yVd"/>
+                                                            <exclude reference="kbA-am-02s"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VTv-ip-wsx">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.24976325757575757" green="0.24976325757575757" blue="0.24976325757575757" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojL-I7-AXH">
+                                                    <rect key="frame" x="13" y="21" width="517" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="c9X-Zq-cgg"/>
+                                                        <constraint firstAttribute="width" constant="495" id="hCj-5h-M1j"/>
+                                                        <constraint firstAttribute="height" constant="21" id="oGC-M0-uw8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.3056739267676768" green="0.3056739267676768" blue="0.3056739267676768" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="hCj-5h-M1j"/>
+                                                            <exclude reference="oGC-M0-uw8"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yF-OY-OMP">
+                                                    <rect key="frame" x="546" y="6" width="37" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="OOx-fz-gXD"/>
+                                                        <constraint firstAttribute="height" constant="32" id="Wax-pX-iBd"/>
+                                                        <constraint firstAttribute="height" constant="32" id="aN5-vO-tUG"/>
+                                                        <constraint firstAttribute="width" constant="37" id="fbt-ZD-WlI"/>
+                                                        <constraint firstAttribute="width" constant="56" id="xAl-1Y-CQx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="OOx-fz-gXD"/>
+                                                            <exclude reference="aN5-vO-tUG"/>
+                                                            <exclude reference="xAl-1Y-CQx"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8yF-OY-OMP" firstAttribute="leading" secondItem="fO6-Bu-K3E" secondAttribute="trailing" constant="41" id="AJP-6u-PgK"/>
+                                                <constraint firstItem="fO6-Bu-K3E" firstAttribute="leading" secondItem="VTB-zA-J0A" secondAttribute="leading" constant="19" id="AXG-he-4hl"/>
+                                                <constraint firstItem="fO6-Bu-K3E" firstAttribute="top" secondItem="VTB-zA-J0A" secondAttribute="topMargin" constant="-5" id="C0X-sb-4Uy"/>
+                                                <constraint firstItem="fO6-Bu-K3E" firstAttribute="leading" secondItem="VTB-zA-J0A" secondAttribute="leadingMargin" constant="5" id="DMJ-V0-bkb"/>
+                                                <constraint firstAttribute="bottom" secondItem="ojL-I7-AXH" secondAttribute="bottom" constant="3" id="In5-It-PHs"/>
+                                                <constraint firstAttribute="centerY" secondItem="8yF-OY-OMP" secondAttribute="centerY" id="NCX-1z-RgW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ojL-I7-AXH" secondAttribute="bottom" constant="-5.5" id="SsT-1P-iAK"/>
+                                                <constraint firstItem="ojL-I7-AXH" firstAttribute="leading" secondItem="VTB-zA-J0A" secondAttribute="leading" constant="19" id="UKA-oT-t28"/>
+                                                <constraint firstItem="ojL-I7-AXH" firstAttribute="top" secondItem="VTB-zA-J0A" secondAttribute="top" constant="20" id="WQ0-hB-O2W"/>
+                                                <constraint firstAttribute="trailing" secondItem="8yF-OY-OMP" secondAttribute="trailing" constant="8" id="XRT-mE-5km"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8yF-OY-OMP" secondAttribute="trailing" constant="9" id="Ymp-D0-N2H"/>
+                                                <constraint firstItem="8yF-OY-OMP" firstAttribute="leading" secondItem="ojL-I7-AXH" secondAttribute="trailing" constant="16" id="aW1-Mm-XOz"/>
+                                                <constraint firstItem="8yF-OY-OMP" firstAttribute="leading" secondItem="fO6-Bu-K3E" secondAttribute="trailing" constant="16" id="bzs-8O-fnE"/>
+                                                <constraint firstItem="ojL-I7-AXH" firstAttribute="leading" secondItem="VTB-zA-J0A" secondAttribute="leadingMargin" constant="5" id="g8U-XW-ySW"/>
+                                                <constraint firstAttribute="centerY" secondItem="8yF-OY-OMP" secondAttribute="centerY" constant="-0.25" id="lUm-cJ-g6G"/>
+                                                <constraint firstItem="8yF-OY-OMP" firstAttribute="leading" secondItem="ojL-I7-AXH" secondAttribute="trailing" constant="41" id="mle-G3-VGz"/>
+                                                <constraint firstItem="fO6-Bu-K3E" firstAttribute="top" secondItem="VTB-zA-J0A" secondAttribute="top" constant="3" id="pVt-ZG-2Ms"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="AXG-he-4hl"/>
+                                                    <exclude reference="pVt-ZG-2Ms"/>
+                                                    <exclude reference="In5-It-PHs"/>
+                                                    <exclude reference="UKA-oT-t28"/>
+                                                    <exclude reference="WQ0-hB-O2W"/>
+                                                    <exclude reference="AJP-6u-PgK"/>
+                                                    <exclude reference="NCX-1z-RgW"/>
+                                                    <exclude reference="XRT-mE-5km"/>
+                                                    <exclude reference="mle-G3-VGz"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="ojL-I7-AXH" id="kvb-P6-ZsE"/>
+                                            <outlet property="gradeLabel" destination="8yF-OY-OMP" id="Fbj-Xk-v34"/>
+                                            <outlet property="titleLabel" destination="fO6-Bu-K3E" id="54x-46-xMV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">

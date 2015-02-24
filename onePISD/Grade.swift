@@ -28,10 +28,4 @@ class Grade {
 		self.grade = grade
 		self.blank = false
 	}
-	
-	init(blank: Bool) {
-		self.termID = 0
-		self.grade = 0
-		self.blank = true
-	}
 }

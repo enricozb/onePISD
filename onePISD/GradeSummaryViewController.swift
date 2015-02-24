@@ -65,7 +65,9 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		if (indexPath.row + 1) % 5 == 0 {
+			tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		}
 	}
 	
 	// MARK: DataSource Methods
@@ -106,14 +108,27 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 		
 		self.edgesForExtendedLayout = UIRectEdge.All
 		courseTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, self.tabBarController!.tabBar.frame.height, 0);
-		
-		View.currentView = self
 		courseTableView.delegate = self
 		courseTableView.dataSource = self
 	}
 	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		View.currentView = self
+		self.deselectLastCell()
+	}
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
+	}
+	
+	// MARK: Private Methods
+	
+	private func deselectLastCell() {
+		let indexPath = courseTableView.indexPathForSelectedRow()
+		if let path = indexPath {
+			courseTableView.deselectRowAtIndexPath(path, animated: true)
+		}
 	}
 	
 }
