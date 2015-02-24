@@ -138,7 +138,6 @@ class Parser {
 	// MARK: Private class methods
 	
 	private class func extractCourse(html: String) -> (Course?, Int?){
-		println(html)
 		let scanner = NSScanner(string: html)
 		var stringBuffer: NSString?
 		

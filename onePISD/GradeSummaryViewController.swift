@@ -64,13 +64,9 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	// MARK: DataSource Methods
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let standardcell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: NSIndexPath(forItem: 0, inSection: 1)) as GradeCell
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as GradeCell
 		let section = indexPath.section
 		let row = indexPath.row
-		
-		let firstTerm = MainSession.session.courses()![section].grades[0].termID
-		let term = firstTerm - MainSession.session.courses()![section].grades[row].termID
 		
 		let termDescription = getTermLabel(row)
 		cell.termLabel?.text = "\(termDescription)"
