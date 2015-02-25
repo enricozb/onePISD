@@ -37,7 +37,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Rewrite and polish for clarity (may never be checked)
 
 ### Features
-![Progress](http://progressed.io/bar/36)
+![Progress](http://progressed.io/bar/25)
 
 - [x] Display Grade Summary
 - [ ] Display individual assignments
@@ -47,6 +47,8 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Grade calculation features
 	- [ ] Semester Exam prediction for "maxing"
 	- [ ] Calculate required Major grade for desired six weeks grade
+- [ ] Add option to remember account
+- [ ] Add a faculty contact page
 
 ### General
 
