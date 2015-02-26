@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D90766E01A98EDE40039209E /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90766DF1A98EDE40039209E /* Grade.swift */; };
+		D91424DE1A9DA1710042A81E /* UICardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DA1A9DA1710042A81E /* UICardLayout.swift */; };
+		D91424DF1A9DA1710042A81E /* UICardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DB1A9DA1710042A81E /* UICardCell.swift */; };
+		D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91424DC1A9DA1710042A81E /* UICardCell.xib */; };
+		D91424E11A9DA1710042A81E /* UICardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DD1A9DA1710042A81E /* UICardViewController.swift */; };
+		D91424E51A9EA1F10042A81E /* CardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D91424E41A9EA1F10042A81E /* CardBG.png */; };
 		D9512EA11A9BE787005A06A3 /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */; };
 		D955E43B1A9584A50009D94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955E43A1A9584A50009D94A /* AppDelegate.swift */; };
 		D955E43D1A9584A50009D94A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955E43C1A9584A50009D94A /* FirstViewController.swift */; };
@@ -96,6 +101,11 @@
 
 /* Begin PBXFileReference section */
 		D90766DF1A98EDE40039209E /* Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		D91424DA1A9DA1710042A81E /* UICardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardLayout.swift; sourceTree = "<group>"; };
+		D91424DB1A9DA1710042A81E /* UICardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardCell.swift; sourceTree = "<group>"; };
+		D91424DC1A9DA1710042A81E /* UICardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICardCell.xib; sourceTree = "<group>"; };
+		D91424DD1A9DA1710042A81E /* UICardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardViewController.swift; sourceTree = "<group>"; };
+		D91424E41A9EA1F10042A81E /* CardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBG.png; sourceTree = "<group>"; };
 		D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
 		D955E4351A9584A50009D94A /* onePISD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onePISD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D955E4391A9584A50009D94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +155,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D91424D51A9D9A870042A81E /* Frontend */ = {
+			isa = PBXGroup;
+			children = (
+				D91424D91A9DA15A0042A81E /* UICardCell */,
+				D95CA8DC1A984E4100545646 /* Notifications */,
+				D955E47C1A96C77B0009D94A /* ViewControllers */,
+			);
+			name = Frontend;
+			sourceTree = "<group>";
+		};
+		D91424D91A9DA15A0042A81E /* UICardCell */ = {
+			isa = PBXGroup;
+			children = (
+				D91424DA1A9DA1710042A81E /* UICardLayout.swift */,
+				D91424DB1A9DA1710042A81E /* UICardCell.swift */,
+				D91424DC1A9DA1710042A81E /* UICardCell.xib */,
+				D91424DD1A9DA1710042A81E /* UICardViewController.swift */,
+			);
+			name = UICardCell;
+			sourceTree = "<group>";
+		};
 		D955E42C1A9584A50009D94A = {
 			isa = PBXGroup;
 			children = (
@@ -167,14 +198,14 @@
 		D955E4371A9584A50009D94A /* onePISD */ = {
 			isa = PBXGroup;
 			children = (
+				D91424D51A9D9A870042A81E /* Frontend */,
 				D9584D2C1A9BA2EE006EAB90 /* Testing */,
-				D95CA8DC1A984E4100545646 /* Aesthetics */,
-				D955E47C1A96C77B0009D94A /* ViewControllers */,
 				D955E4791A95AFFC0009D94A /* Backend */,
 				D955E43A1A9584A50009D94A /* AppDelegate.swift */,
 				D955E4401A9584A50009D94A /* Main.storyboard */,
 				D955E4431A9584A50009D94A /* Images.xcassets */,
 				D955E4451A9584A50009D94A /* LaunchScreen.xib */,
+				D91424E41A9EA1F10042A81E /* CardBG.png */,
 				D955E4381A9584A50009D94A /* Supporting Files */,
 			);
 			path = onePISD;
@@ -245,12 +276,12 @@
 			name = Testing;
 			sourceTree = "<group>";
 		};
-		D95CA8DC1A984E4100545646 /* Aesthetics */ = {
+		D95CA8DC1A984E4100545646 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
 				D95CA8B91A97B40800545646 /* SwiftOverlays.swift */,
 			);
-			name = Aesthetics;
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		D9EF7BC61A9B85DE008EC0F2 /* Products */ = {
@@ -389,7 +420,9 @@
 				D955E4471A9584A50009D94A /* LaunchScreen.xib in Resources */,
 				D95CA8E01A98530A00545646 /* Default.png in Resources */,
 				D955E4441A9584A50009D94A /* Images.xcassets in Resources */,
+				D91424E51A9EA1F10042A81E /* CardBG.png in Resources */,
 				D96743B91A96EDDF002B1C57 /* LoginTextFieldFilled.png in Resources */,
+				D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +441,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9AFED4F1A9BCDFF0087277F /* GradeCell.swift in Sources */,
+				D91424DF1A9DA1710042A81E /* UICardCell.swift in Sources */,
 				D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */,
 				D95CA8DE1A984E5A00545646 /* Course.swift in Sources */,
+				D91424E11A9DA1710042A81E /* UICardViewController.swift in Sources */,
 				D9CA0F5C1A9A2B3D0010B639 /* Assignment.swift in Sources */,
 				D95CA8BA1A97B40800545646 /* SwiftOverlays.swift in Sources */,
 				D955E4761A9585190009D94A /* Session.swift in Sources */,
@@ -424,6 +459,7 @@
 				D9584D241A9B89DA006EAB90 /* TestViewController.swift in Sources */,
 				D9584D2E1A9BA602006EAB90 /* GradeSummaryViewController.swift in Sources */,
 				D955E43D1A9584A50009D94A /* FirstViewController.swift in Sources */,
+				D91424DE1A9DA1710042A81E /* UICardLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

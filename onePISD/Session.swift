@@ -94,7 +94,7 @@ class Session {
 		Use with a trailing closure with parameters (NSHTTPURLResponse, String, SessionError?)
 	*/
 	func login(completionHandler: (NSHTTPURLResponse?, String, SessionError?) -> ()) {
-		View.showWaitOverlayWithText("Attempting Login")
+		View.showWaitOverlayWithText("Loading PISD")
 		self.manager.request(.GET, url_login).responseString { (_, response, html_data, error) in
 			if error?.code == -1009 {
 				View.showTextOverlay("No Internet Connection", clearAfter: 5)
@@ -136,7 +136,7 @@ class Session {
 	// MARK: Private class methods
 	
 	private func loginWithParams(html: String, completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
-		View.showWaitOverlayWithText("Setting Parameters")
+		View.showWaitOverlayWithText("Logging in")
 		let lt = Parser.getLTfromHTML(html)
 		
 		let params = [
@@ -178,7 +178,7 @@ class Session {
 	private func grabGradeFormWithURL(url: String, completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Grabbing Gradebook form")
 		println("\tfrom url \(url)")
-		self.manager.request(.GET, url).responseString { (_, response, html_data, _) in
+		self.manager.request(.GET, url).responseString { (_, response, html_data, error) in
 			self.grade_form = Parser.getGradeFormFromHTML(html_data!)
 			self.submitGradeForm(completionHandler)
 		}

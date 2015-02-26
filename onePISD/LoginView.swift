@@ -19,7 +19,6 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	@IBAction func loginButtonPressed(sender: UIButton) {
 		
 		self.view.endEditing(false)
-		
 		MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
 		
 		MainSession.session.login { (response, html_data, error) in

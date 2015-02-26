@@ -11,6 +11,7 @@
 	_	inout parameters for _form_ functions
 	_	support for semester courses, and for dropped/1.5 credit courses
 	_	rewrite some shit
+	_	fix private functions
 */
 
 import Foundation
@@ -31,14 +32,31 @@ class Parser {
 	
 	
 	class func getUIDfromHTML(html: String) -> String {
-		let index_start = html.rangeOfString("\"uID\" value=\"")!.endIndex
-		var index_end = index_start
-		
-		for _ in 1...50 {
-			index_end = index_end.successor()
+		var index_start = html.rangeOfString("\"uID\" value=\"")?.endIndex
+		if let index = index_start {
+			var index_end = index
+			
+			for _ in 1...50 {
+				index_end = index_end.successor()
+			}
+			return html.substringWithRange(Range<String.Index>(start: index, end: index_end))
 		}
 		
-		return html.substringWithRange(Range<String.Index>(start: index_start, end: index_end))
+		//assert(false, "PISD has some problems, or they changed their website. Check if uID is the same as Student ID")
+		
+		index_start = html.rangeOfString("getUserId")?.endIndex
+		if let index = index_start {
+			let substring = html.substringFromIndex(index)
+			var buffer: NSString?
+			let scanner = NSScanner(string: substring)
+			scanner.scanUpToString("return", intoString: nil)
+			scanner.scanString("return", intoString: nil)
+			scanner.scanUpToString("\"", intoString: nil)
+			scanner.scanString("\"", intoString: nil)
+			scanner.scanUpToString("\"", intoString: &buffer)
+			return buffer!
+		}
+		return ""
 	}
 	
 	class func getRedirectfromHTML(html: String) -> String {

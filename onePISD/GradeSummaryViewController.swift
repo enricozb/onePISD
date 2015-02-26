@@ -46,7 +46,7 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == segueId {
-			if let destination = segue.destinationViewController as? AssignmentViewController {
+			if let destination = segue.destinationViewController as? UICardViewController {
 				if let section = courseTableView.indexPathForSelectedRow()?.section {
 					if let row = courseTableView.indexPathForSelectedRow()?.row {
 						if shouldPerformSegueWithIdentifier(segueId, sender: sender) {
