@@ -16,7 +16,6 @@ class UICardViewController : UICollectionViewController{
 	
 	func loadData() {
 		View.currentView = self
-		View.showWaitOverlayWithText("Loading Assignments")
 		MainSession.session.loadAssignmentsForGrade(self.grade!) { (response, html_data, error) in
 			View.clearOverlays()
 			self.assignments = self.grade!.assignments!
@@ -64,6 +63,7 @@ class UICardViewController : UICollectionViewController{
 	}
 	
 	override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+		
 		var should = true
 		
 		for path in collectionView.indexPathsForSelectedItems() as [NSIndexPath] {
@@ -96,6 +96,7 @@ class UICardViewController : UICollectionViewController{
 		}
 		else {
 			self.assignments = self.grade!.assignments!
+			println(self.assignments)
 			self.collectionView?.reloadData()
 		}
 	}
