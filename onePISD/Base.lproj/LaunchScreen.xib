@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,18 +11,27 @@
             <rect key="frame" x="0.0" y="0.0" width="513" height="611"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Lv-iM-a5R">
-                    <rect key="frame" x="96" y="22" width="320" height="568"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-median-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-gb-jNU">
+                    <rect key="frame" x="83" y="0.0" width="346" height="611"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="568" id="3uA-jc-XtX"/>
-                        <constraint firstAttribute="width" constant="320" id="i8j-99-lmI"/>
+                        <constraint firstAttribute="width" secondItem="Vu6-gb-jNU" secondAttribute="height" multiplier="346:611" id="XWg-Lz-W3P"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ezl-WS-D3y">
+                    <rect key="frame" x="136" y="268" width="240" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ezl-WS-D3y" secondAttribute="height" multiplier="60:19" id="Ctt-fE-fqC"/>
+                        <constraint firstAttribute="height" constant="76" id="vZa-31-2bk"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.29019607843137257" green="0.39215686274509803" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="3Lv-iM-a5R" secondAttribute="centerX" constant="0.5" id="09E-OQ-w7y"/>
-                <constraint firstAttribute="centerY" secondItem="3Lv-iM-a5R" secondAttribute="centerY" constant="-0.5" id="Kr2-YU-UCb"/>
+                <constraint firstAttribute="centerX" secondItem="Vu6-gb-jNU" secondAttribute="centerX" constant="0.5" id="2QL-lh-SBD"/>
+                <constraint firstAttribute="centerY" secondItem="Vu6-gb-jNU" secondAttribute="centerY" id="38U-y3-jUt"/>
+                <constraint firstAttribute="centerX" secondItem="ezl-WS-D3y" secondAttribute="centerX" constant="0.5" id="a7t-T1-sFB"/>
+                <constraint firstAttribute="centerY" secondItem="ezl-WS-D3y" secondAttribute="centerY" constant="-0.5" id="k18-Da-Jox"/>
+                <constraint firstItem="Vu6-gb-jNU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ojO-3Q-bhO"/>
+                <constraint firstAttribute="centerY" secondItem="ezl-WS-D3y" secondAttribute="centerY" constant="-0.5" id="uGn-bU-TSN"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -29,6 +39,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="640" height="1136"/>
+        <image name="BG-median-1" width="320" height="568"/>
+        <image name="Logo" width="320" height="100"/>
     </resources>
 </document>

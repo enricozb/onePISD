@@ -25,4 +25,14 @@ class Assignment {
 		self.grade = grade
 		self.assignmentID = assignmentID
 	}
+	
+	// MARK: Sorting Closures
+	
+	class func byCategory() -> (Assignment, Assignment) -> Bool {
+		return { $0.category < $1.category }
+	}
+	
+	class func byGrade() -> (Assignment, Assignment) -> Bool {
+		return { $0.grade < $1.grade }
+	}
 }

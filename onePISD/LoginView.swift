@@ -10,45 +10,48 @@ import UIKit
 
 class LoginView : UIViewController, UITextFieldDelegate {
 	
-	let backgroundColor = UIColor(red: 0.290196078, green: 0.392156863, blue: 0.568627451, alpha: 1)
-	
-	@IBOutlet weak var textFieldBackground: UIImageView!
+	//@IBOutlet weak var textFieldBackground: UIImageView!
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
-	@IBAction func loginButtonPressed(sender: UIButton) {
-		
-		self.view.endEditing(false)
-		MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
-		
-		MainSession.session.login { (response, html_data, error) in
-			if error == SessionError.wrongCredentials {
-				println("Wrong Credentials")
-				self.notifyWrongCredentials()
-			}
-			else if error != SessionError.noInternetConnection {
-				println("Six Week Grades Loaded!")
-				View.loadView(Storyboard.GradeSummary, fromView: self)
-			}
-		}
-		
-		usernameTextField.delegate = self
-		passwordTextField.delegate = self
-		
-	}
+	@IBOutlet weak var usernameImageView: UIImageView!
+	@IBOutlet weak var passwordImageView: UIImageView!
+	
+	@IBOutlet weak var logoImageView: UIImageView!
+	@IBOutlet weak var centerBar: NSLayoutConstraint!
 	
 	func textFieldShouldReturn(textField: UITextField!) -> Bool {
-		self.view.endEditing(true);
-		return true;
+		self.view.endEditing(true)
+		if textField == passwordTextField {
+			MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
+			
+			MainSession.session.login { (response, html_data, error) in
+				if error == SessionError.wrongCredentials {
+					println("Wrong Credentials")
+					//self.notifyWrongCredentials()
+				}
+				else if error != SessionError.noInternetConnection {
+					println("Six Week Grades Loaded!")
+					View.loadView(Storyboard.GradeSummary, fromView: self)
+				}
+			}
+		}
+		return true
 	}
 	
+	// MARK: UIView Functions
+	
 	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-		self.view.endEditing(true);
+		self.view.endEditing(true)
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.view.backgroundColor = self.backgroundColor
+		usernameTextField.delegate = self
+		passwordTextField.delegate = self
+		
+		self.setPlaceholderText()
+		self.prepareForAnimate()
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -58,8 +61,43 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		View.currentView = self
+		
+		self.animateLogin()
 	}
 	
+	// MARK: Private Functions
+	
+	private func prepareForAnimate() {
+		usernameTextField.alpha = 0
+		passwordTextField.alpha = 0
+		usernameImageView.alpha = 0
+		passwordImageView.alpha = 0
+	}
+	
+	private func animateLogin() {
+		self.centerBar.constant = self.view.frame.height/3
+		
+		UIView.animateWithDuration(1.0, delay: 0.5, options: .CurveEaseInOut, animations: {
+			self.view.layoutIfNeeded()
+			self.usernameTextField.alpha = 1
+			self.passwordTextField.alpha = 1
+			self.usernameImageView.alpha = 1
+			self.passwordImageView.alpha = 1
+			}, completion: {(_) in
+		})
+		
+
+	}
+	
+	private func setPlaceholderText() {
+		let attributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+		let str_user = NSAttributedString(string: "Username", attributes: attributes)
+		let str_pass = NSAttributedString(string: "Password", attributes: attributes)
+		usernameTextField.attributedPlaceholder = str_user
+		passwordTextField.attributedPlaceholder = str_pass
+	}
+	
+	/*
 	private func notifyWrongCredentials() {
 		let useranimation = CABasicAnimation(keyPath: "position")
 		useranimation.duration = 0.06
@@ -87,5 +125,6 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		passwordTextField.layer.addAnimation(passanimation, forKey: "position")
 		textFieldBackground.layer.addAnimation(textanimation, forKey: "position")
 	}
+	*/
 	
 }
