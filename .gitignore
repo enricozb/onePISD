@@ -20,6 +20,7 @@ DerivedData
 #project dependent
 /Alamofire
 /Assets
+/External_Libraries
 
 # CocoaPods
 #
