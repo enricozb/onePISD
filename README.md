@@ -35,6 +35,7 @@ Uses [Alamofire](https://github.com/Alamofire/Alamofire) for HTTP requests.
 - [ ] Guarantee support for semester and 1.5 credit courses
 - [ ] Fix slow NSScanner and substring performance
 - [ ] Rewrite and polish for clarity (may never be checked)
+	- [ ] Use SaneString for String operations
 
 ### Features
 ![Progress](http://progressed.io/bar/25)
