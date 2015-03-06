@@ -29,6 +29,7 @@ import UIKit
 
 	rewrite for clarity, and convention
 		*	make studentId an instance variable of session, not of grade
+		-	remove getter functions.
 */
 
 /* ----- Public Functions -----
@@ -50,12 +51,20 @@ enum SessionError {
 
 class Session {
 	
-	private let url_login = "https://sso.portal.mypisd.net/cas/login?"
-	private let url_user = "https://sso.portal.mypisd.net/cas/login?service=http%3A%2F%2Fportal.mypisd.net%2Fc%2Fportal%2Flogin"
-	private let url_grades = "https://parentviewer.pisd.edu/EP/PIV_Passthrough.aspx"
-	private let url_pinnacle = "https://gradebook.pisd.edu/Pinnacle/Gradebook/link.aspx?target=InternetViewer"
-	private let url_gradesummary = "https://gradebook.pisd.edu/Pinnacle/Gradebook/InternetViewer/GradeSummary.aspx"
-	private let url_gradeassignments = "https://gradebook.pisd.edu/Pinnacle/Gradebook/InternetViewer/StudentAssignments.aspx?"
+	private let url_login =
+		"https://sso.portal.mypisd.net/cas/login?"
+	private let url_user =
+		"https://sso.portal.mypisd.net/cas/login?service=http%3A%2F%2Fportal.mypisd.net%2Fc%2Fportal%2Flogin"
+	private let url_grades =
+		"https://parentviewer.pisd.edu/EP/PIV_Passthrough.aspx"
+	private let url_pinnacle =
+		"https://gradebook.pisd.edu/Pinnacle/Gradebook/link.aspx?target=InternetViewer"
+	private let url_gradesummary =
+		"https://gradebook.pisd.edu/Pinnacle/Gradebook/InternetViewer/GradeSummary.aspx"
+	private let url_gradeassignments =
+		"https://gradebook.pisd.edu/Pinnacle/Gradebook/InternetViewer/StudentAssignments.aspx?"
+	private let url_attendancesummary =
+		"https://gradebook.pisd.edu/Pinnacle/Gradebook/InternetViewer/AttendanceSummary.aspx?"
 	
 	private var username: String
 	private var password: String
@@ -124,6 +133,15 @@ class Session {
 			completionHandler(response, html_data!, nil)
 		}
 	}
+	
+	func loadAttendanceSummary(completionHandler: (NSHTTPURLResponse?, String, SessionError?) -> ()) {
+		self.manager.request(.GET, url_attendancesummary).responseString { (request, response, html_data, error) in
+			println(html_data!)
+			let (viewstate, eventvalidation, pageuniqueid) = Parser.getAttendanceCredentials(html_data!)
+		}
+	}
+	
+	// MARK: Getter Functions (remove)
 	
 	func courses() -> [Course]? {
 		return course_list

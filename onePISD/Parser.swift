@@ -12,6 +12,7 @@
 	_	support for semester courses, and for dropped/1.5 credit courses
 	_	rewrite some shit
 	_	fix private functions
+	_	write a damn substring method, or a class.
 */
 
 import Foundation
@@ -19,7 +20,13 @@ import UIKit
 
 class Parser {
 	class func getLTfromHTML(html: String) -> String {
+		
+		var substring = html["name=\"lt\" value=\"", "name=\"_eventId\""]
+		return substring.substringTo(substring.length() - 33)
+		
+		/*
 		let range_start = html.rangeOfString("name=\"lt\" value=\"")
+		
 		let range_end = html.rangeOfString("name=\"_eventId\"")
 		
 		var index_end = range_end!.startIndex
@@ -28,6 +35,7 @@ class Parser {
 			index_end = index_end.predecessor()	//It's sad how bad swift actually is.
 		}
 		return html.substringWithRange(Range<String.Index>(start: range_start!.endIndex, end: index_end))
+		*/
 	}
 	
 	
@@ -151,6 +159,11 @@ class Parser {
 		}
 		return assignments
 		
+	}
+	
+	class func getAttendanceCredentials(html: String) -> (viewState: String, eventVal: String, pageID: String) {
+		
+		return ("", "", "")
 	}
 	
 	// MARK: Private class methods
