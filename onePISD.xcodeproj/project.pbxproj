@@ -32,10 +32,6 @@
 		D9584D2E1A9BA602006EAB90 /* GradeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9584D2D1A9BA602006EAB90 /* GradeSummaryViewController.swift */; };
 		D95CA8BA1A97B40800545646 /* SwiftOverlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CA8B91A97B40800545646 /* SwiftOverlays.swift */; };
 		D95CA8DE1A984E5A00545646 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CA8DD1A984E5A00545646 /* Course.swift */; };
-		D95CA8E01A98530A00545646 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D95CA8DF1A98530A00545646 /* Default.png */; };
-		D96743B91A96EDDF002B1C57 /* LoginTextFieldFilled.png in Resources */ = {isa = PBXBuildFile; fileRef = D96743B81A96EDDF002B1C57 /* LoginTextFieldFilled.png */; };
-		D96743BB1A96F2BB002B1C57 /* LoginButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D96743BA1A96F2BB002B1C57 /* LoginButtonPressed.png */; };
-		D96743BD1A96F2C9002B1C57 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D96743BC1A96F2C9002B1C57 /* LoginButton.png */; };
 		D9AFED4F1A9BCDFF0087277F /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */; };
 		D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED531A9BD3380087277F /* AssignmentViewController.swift */; };
 		D9B12E901AA37A1D003AD50E /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B12E8F1AA37A1D003AD50E /* TextField.png */; };
@@ -126,10 +122,6 @@
 		D9584D2D1A9BA602006EAB90 /* GradeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeSummaryViewController.swift; sourceTree = "<group>"; };
 		D95CA8B91A97B40800545646 /* SwiftOverlays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOverlays.swift; sourceTree = "<group>"; };
 		D95CA8DD1A984E5A00545646 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		D95CA8DF1A98530A00545646 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D96743B81A96EDDF002B1C57 /* LoginTextFieldFilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginTextFieldFilled.png; sourceTree = "<group>"; };
-		D96743BA1A96F2BB002B1C57 /* LoginButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginButtonPressed.png; path = Assets/LoginButtonPressed.png; sourceTree = SOURCE_ROOT; };
-		D96743BC1A96F2C9002B1C57 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
 		D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
 		D9AFED531A9BD3380087277F /* AssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
 		D9B12E8F1AA37A1D003AD50E /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
@@ -229,10 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				D9B12E941AA37C2B003AD50E /* Segoe.ttf */,
-				D95CA8DF1A98530A00545646 /* Default.png */,
-				D96743BA1A96F2BB002B1C57 /* LoginButtonPressed.png */,
-				D96743B81A96EDDF002B1C57 /* LoginTextFieldFilled.png */,
-				D96743BC1A96F2C9002B1C57 /* LoginButton.png */,
 				D955E4391A9584A50009D94A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -419,15 +407,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96743BB1A96F2BB002B1C57 /* LoginButtonPressed.png in Resources */,
-				D96743BD1A96F2C9002B1C57 /* LoginButton.png in Resources */,
 				D955E4421A9584A50009D94A /* Main.storyboard in Resources */,
 				D955E4471A9584A50009D94A /* LaunchScreen.xib in Resources */,
-				D95CA8E01A98530A00545646 /* Default.png in Resources */,
 				D955E4441A9584A50009D94A /* Images.xcassets in Resources */,
 				D91424E51A9EA1F10042A81E /* CardBG.png in Resources */,
 				D9B12E951AA37C2B003AD50E /* Segoe.ttf in Resources */,
-				D96743B91A96EDDF002B1C57 /* LoginTextFieldFilled.png in Resources */,
 				D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */,
 				D9B12E901AA37A1D003AD50E /* TextField.png in Resources */,
 			);
