@@ -22,6 +22,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	
 	func textFieldShouldReturn(textField: UITextField!) -> Bool {
 		self.view.endEditing(true)
+
 		if textField == passwordTextField {
 			MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
 			

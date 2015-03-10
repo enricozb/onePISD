@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 extension String {
 	
@@ -34,12 +34,14 @@ extension String {
 			flipped = true
 		}
 		
-		//let strIndexRange = Range<String.Index>(start: advance(self.startIndex, start), end: advance(self.startIndex, end))
-		
 		if flipped {
-			return self[advance(self.startIndex, start)...advance(self.startIndex, end)].reverse()
+			return self[advance(self.startIndex, start)..<advance(self.startIndex, end - start)].reverse()
 		}
-		return self[advance(self.startIndex, start)...advance(self.startIndex, end)]
+		return self[advance(self.startIndex, start)..<advance(self.startIndex, end - start)]
+	}
+	
+	func substring (#start: String, end: String) -> String {
+		return self[start, end]
 	}
 	
 	subscript(start: Int, end: Int) -> String {

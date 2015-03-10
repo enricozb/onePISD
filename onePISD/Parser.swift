@@ -22,7 +22,7 @@ class Parser {
 	class func getLTfromHTML(html: String) -> String {
 		
 		var substring = html["name=\"lt\" value=\"", "name=\"_eventId\""]
-		return substring.substringTo(substring.length() - 33)
+		return substring.substringTo(substring.length() - 32)
 		
 		/*
 		let range_start = html.rangeOfString("name=\"lt\" value=\"")
@@ -32,8 +32,11 @@ class Parser {
 		var index_end = range_end!.startIndex
 		
 		for i in 0...31 {
-			index_end = index_end.predecessor()	//It's sad how bad swift actually is.
+		index_end = index_end.predecessor()	//It's sad how bad swift actually is.
 		}
+		println(html.substringWithRange(Range<String.Index>(start: range_start!.endIndex, end: index_end)))
+		
+		println(substring.substringTo(substring.length() - 32))
 		return html.substringWithRange(Range<String.Index>(start: range_start!.endIndex, end: index_end))
 		*/
 	}
