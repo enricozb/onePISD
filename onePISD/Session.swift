@@ -106,6 +106,7 @@ class Session {
 		View.showWaitOverlayWithText("Loading PISD")
 		self.manager.request(.GET, url_login).responseString { (_, response, html_data, error) in
 			if error?.code == -1009 {
+				View.showTextOverlay("No Internet Connection", clearAfter: 5)
 				completionHandler(response, html_data!, SessionError.noInternetConnection)
 			}
 			else {
