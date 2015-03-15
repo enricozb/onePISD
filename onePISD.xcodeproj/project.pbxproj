@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D90766E01A98EDE40039209E /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90766DF1A98EDE40039209E /* Grade.swift */; };
+		D90BB1711AAFB749009265BA /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90BB1701AAFB749009265BA /* OpenSans-Light.ttf */; };
+		D90BB1721AAFB749009265BA /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90BB1701AAFB749009265BA /* OpenSans-Light.ttf */; };
 		D90DC6101AA98BAC002B85FD /* SaneString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DC60F1AA98BAC002B85FD /* SaneString.swift */; };
 		D91424DE1A9DA1710042A81E /* UICardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DA1A9DA1710042A81E /* UICardLayout.swift */; };
 		D91424DF1A9DA1710042A81E /* UICardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DB1A9DA1710042A81E /* UICardCell.swift */; };
@@ -34,10 +36,12 @@
 		D95CA8DE1A984E5A00545646 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CA8DD1A984E5A00545646 /* Course.swift */; };
 		D9AFED4F1A9BCDFF0087277F /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */; };
 		D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED531A9BD3380087277F /* AssignmentViewController.swift */; };
-		D9B12E901AA37A1D003AD50E /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B12E8F1AA37A1D003AD50E /* TextField.png */; };
-		D9B12E951AA37C2B003AD50E /* Segoe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9B12E941AA37C2B003AD50E /* Segoe.ttf */; };
-		D9B12E961AA37C2B003AD50E /* Segoe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9B12E941AA37C2B003AD50E /* Segoe.ttf */; };
 		D9CA0F5C1A9A2B3D0010B639 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CA0F5B1A9A2B3D0010B639 /* Assignment.swift */; };
+		D9D3EC771AB5E6CF00CAA288 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC761AB5E6CF00CAA288 /* Logo.png */; };
+		D9D3EC791AB5E76600CAA288 /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC781AB5E76600CAA288 /* TextField.png */; };
+		D9D3EC7B1AB5EA9000CAA288 /* BG-gauss-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */; };
+		D9D3EC7D1AB5EC5D00CAA288 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */; };
+		D9D3EC7F1AB5F00400CAA288 /* LoginButton-Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		D90766DF1A98EDE40039209E /* Grade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		D90BB1701AAFB749009265BA /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		D90DC60F1AA98BAC002B85FD /* SaneString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaneString.swift; sourceTree = "<group>"; };
 		D91424DA1A9DA1710042A81E /* UICardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardLayout.swift; sourceTree = "<group>"; };
 		D91424DB1A9DA1710042A81E /* UICardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardCell.swift; sourceTree = "<group>"; };
@@ -124,10 +129,12 @@
 		D95CA8DD1A984E5A00545646 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
 		D9AFED531A9BD3380087277F /* AssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
-		D9B12E8F1AA37A1D003AD50E /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
-		D9B12E941AA37C2B003AD50E /* Segoe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Segoe.ttf; sourceTree = "<group>"; };
-		D9B12E971AA38374003AD50E /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		D9CA0F5B1A9A2B3D0010B639 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		D9D3EC761AB5E6CF00CAA288 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		D9D3EC781AB5E76600CAA288 /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
+		D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG-gauss-1@2x.png"; sourceTree = "<group>"; };
+		D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
+		D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginButton-Pressed.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,11 +214,8 @@
 				D955E4791A95AFFC0009D94A /* Backend */,
 				D955E43A1A9584A50009D94A /* AppDelegate.swift */,
 				D955E4401A9584A50009D94A /* Main.storyboard */,
-				D9B12E971AA38374003AD50E /* Logo.png */,
 				D955E4431A9584A50009D94A /* Images.xcassets */,
 				D955E4451A9584A50009D94A /* LaunchScreen.xib */,
-				D91424E41A9EA1F10042A81E /* CardBG.png */,
-				D9B12E8F1AA37A1D003AD50E /* TextField.png */,
 				D955E4381A9584A50009D94A /* Supporting Files */,
 			);
 			path = onePISD;
@@ -220,7 +224,13 @@
 		D955E4381A9584A50009D94A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D9B12E941AA37C2B003AD50E /* Segoe.ttf */,
+				D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */,
+				D9D3EC761AB5E6CF00CAA288 /* Logo.png */,
+				D90BB1701AAFB749009265BA /* OpenSans-Light.ttf */,
+				D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */,
+				D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */,
+				D9D3EC781AB5E76600CAA288 /* TextField.png */,
+				D91424E41A9EA1F10042A81E /* CardBG.png */,
 				D955E4391A9584A50009D94A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -407,13 +417,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D3EC771AB5E6CF00CAA288 /* Logo.png in Resources */,
 				D955E4421A9584A50009D94A /* Main.storyboard in Resources */,
 				D955E4471A9584A50009D94A /* LaunchScreen.xib in Resources */,
+				D9D3EC7D1AB5EC5D00CAA288 /* LoginButton.png in Resources */,
+				D90BB1711AAFB749009265BA /* OpenSans-Light.ttf in Resources */,
+				D9D3EC7F1AB5F00400CAA288 /* LoginButton-Pressed.png in Resources */,
 				D955E4441A9584A50009D94A /* Images.xcassets in Resources */,
 				D91424E51A9EA1F10042A81E /* CardBG.png in Resources */,
-				D9B12E951AA37C2B003AD50E /* Segoe.ttf in Resources */,
 				D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */,
-				D9B12E901AA37A1D003AD50E /* TextField.png in Resources */,
+				D9D3EC791AB5E76600CAA288 /* TextField.png in Resources */,
+				D9D3EC7B1AB5EA9000CAA288 /* BG-gauss-1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9B12E961AA37C2B003AD50E /* Segoe.ttf in Resources */,
+				D90BB1721AAFB749009265BA /* OpenSans-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

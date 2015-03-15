@@ -10,7 +10,6 @@ import UIKit
 
 class LoginView : UIViewController, UITextFieldDelegate {
 	
-	//@IBOutlet weak var textFieldBackground: UIImageView!
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	
@@ -20,25 +19,36 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var logoImageView: UIImageView!
 	@IBOutlet weak var centerBar: NSLayoutConstraint!
 	
+	@IBOutlet weak var loginButton: UIButton!
+	
 	func textFieldShouldReturn(textField: UITextField!) -> Bool {
 		self.view.endEditing(true)
-
-		if textField == passwordTextField {
-			MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
-			
-			MainSession.session.login { (response, html_data, error) in
-				if error == SessionError.wrongCredentials {
-					println("Wrong Credentials")
-					//self.notifyWrongCredentials()
-				}
-				else if error != SessionError.noInternetConnection {
-					println("Six Week Grades Loaded!")
-					View.loadView(Storyboard.GradeSummary, fromView: self)
-				}
-			}
-		}
 		return true
 	}
+
+	@IBAction func buttonPressed(sender: AnyObject) {
+		self.view.endEditing(true)
+		self.loginButton.enabled = false
+		View.clearOverlays()
+		MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
+		MainSession.session.login { (response, html_data, error) in
+			if error == SessionError.wrongCredentials {
+				println("Wrong Credentials")
+				self.loginButton.enabled = true
+				self.passwordTextField.text = ""
+				View.showTextOverlay("Incorrect Credentials", clearAfter: 2)
+			}
+			else if error == SessionError.noInternetConnection {
+				println("No Internet Connection")
+				View.showTextOverlay("No Internet Connection", clearAfter: 2)
+			}
+			else {
+				println("Six Week Grades Loaded!")
+				View.loadView(Storyboard.GradeSummary, fromView: self)
+			}
+		}
+	}
+	
 	
 	// MARK: UIView Functions
 	
@@ -50,7 +60,6 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		super.viewDidLoad()
 		usernameTextField.delegate = self
 		passwordTextField.delegate = self
-		
 		self.setPlaceholderText()
 		self.prepareForAnimate()
 	}
@@ -69,14 +78,15 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	// MARK: Private Functions
 	
 	private func prepareForAnimate() {
-		usernameTextField.alpha = 0
-		passwordTextField.alpha = 0
-		usernameImageView.alpha = 0
-		passwordImageView.alpha = 0
+		self.usernameTextField.alpha = 0
+		self.passwordTextField.alpha = 0
+		self.usernameImageView.alpha = 0
+		self.passwordImageView.alpha = 0
+		self.loginButton.alpha = 0
 	}
 	
 	private func animateLogin() {
-		self.centerBar.constant = self.view.frame.height/3
+		self.centerBar.constant = self.view.frame.height/5
 		
 		UIView.animateWithDuration(1.0, delay: 0.5, options: .CurveEaseInOut, animations: {
 			self.view.layoutIfNeeded()
@@ -84,6 +94,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 			self.passwordTextField.alpha = 1
 			self.usernameImageView.alpha = 1
 			self.passwordImageView.alpha = 1
+			self.loginButton.alpha = 1
 			}, completion: {(_) in
 		})
 		

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e8F-6j-96A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="e8F-6j-96A">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Segoe.ttf">
-            <string>SegoeWP-Light</string>
-            <string>SegoeWP-Light</string>
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -132,41 +132,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField.png" translatesAutoresizingMaskIntoConstraints="NO" id="4PT-S9-Zb0">
-                                <rect key="frame" x="179" y="275" width="240" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Yp4-zA-tiH"/>
-                                    <constraint firstAttribute="height" constant="50" id="maQ-ba-iNQ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField.png" translatesAutoresizingMaskIntoConstraints="NO" id="Upc-Yh-bkq">
-                                <rect key="frame" x="179" y="333" width="240" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="FOV-J6-kKx"/>
-                                    <constraint firstAttribute="height" constant="50" id="wiZ-Ei-33x"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-wZ-Xrq">
-                                <rect key="frame" x="198" y="343" width="204" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="204" id="H7g-2A-qUe"/>
-                                    <constraint firstAttribute="width" secondItem="J7D-wZ-Xrq" secondAttribute="height" multiplier="34:5" id="jEL-kt-K9S"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SegoeWP-Light" family="Segoe WP Light" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-76-drv">
-                                <rect key="frame" x="197" y="285" width="204" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="K4v-76-drv" secondAttribute="height" multiplier="34:5" id="i4p-3W-vtn"/>
-                                    <constraint firstAttribute="width" constant="204" id="v4f-vr-NiQ"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SegoeWP-Light" family="Segoe WP Light" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="fmA-nf-dRg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="fmA-nf-dRg">
                                 <rect key="frame" x="180" y="262" width="240" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fmA-nf-dRg" secondAttribute="height" multiplier="60:19" id="1VP-7Z-VFi"/>
@@ -185,6 +151,79 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-76-drv">
+                                <rect key="frame" x="197" y="237" width="204" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K4v-76-drv" secondAttribute="height" multiplier="34:5" id="HkL-hx-KfG"/>
+                                    <constraint firstAttribute="width" secondItem="K4v-76-drv" secondAttribute="height" multiplier="34:5" id="i4p-3W-vtn"/>
+                                    <constraint firstAttribute="height" constant="30" id="s2z-xH-nRi"/>
+                                    <constraint firstAttribute="width" constant="204" id="v4f-vr-NiQ"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="i4p-3W-vtn"/>
+                                        <exclude reference="v4f-vr-NiQ"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField.png" translatesAutoresizingMaskIntoConstraints="NO" id="4PT-S9-Zb0" userLabel="PassTextField.png">
+                                <rect key="frame" x="179" y="275" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Yp4-zA-tiH"/>
+                                    <constraint firstAttribute="height" constant="50" id="maQ-ba-iNQ"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-wZ-Xrq">
+                                <rect key="frame" x="197" y="285" width="204" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="204" id="H7g-2A-qUe"/>
+                                    <constraint firstAttribute="height" constant="30" id="VPx-nb-FBk"/>
+                                    <constraint firstAttribute="width" secondItem="J7D-wZ-Xrq" secondAttribute="height" multiplier="34:5" id="eYh-g6-eVT"/>
+                                    <constraint firstAttribute="width" secondItem="J7D-wZ-Xrq" secondAttribute="height" multiplier="34:5" id="jEL-kt-K9S"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H7g-2A-qUe"/>
+                                        <exclude reference="jEL-kt-K9S"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField.png" translatesAutoresizingMaskIntoConstraints="NO" id="Upc-Yh-bkq" userLabel="UserTextField.png">
+                                <rect key="frame" x="179" y="227" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FOV-J6-kKx"/>
+                                    <constraint firstAttribute="width" constant="240" id="IVY-eU-8Vc"/>
+                                    <constraint firstAttribute="width" secondItem="Upc-Yh-bkq" secondAttribute="height" multiplier="24:5" id="Uxj-d8-8ek"/>
+                                    <constraint firstAttribute="height" constant="50" id="wiZ-Ei-33x"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FOV-J6-kKx"/>
+                                        <exclude reference="wiZ-Ei-33x"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3c-S7-p8j">
+                                <rect key="frame" x="179" y="323" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a3c-S7-p8j" secondAttribute="height" multiplier="24:5" id="KxG-HP-lxS"/>
+                                    <constraint firstAttribute="width" constant="240" id="Tn8-YI-mRF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button" image="LoginButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="LoginButton-Pressed.png"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="e8F-6j-96A" eventType="touchUpInside" id="YSB-Pc-A2g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -196,6 +235,7 @@
                             <constraint firstAttribute="centerY" secondItem="K4v-76-drv" secondAttribute="centerY" id="6Ni-Gw-gCS"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="top" secondItem="K7p-WP-6PC" secondAttribute="topMargin" id="8dl-ve-g6v"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="leading" secondItem="K7p-WP-6PC" secondAttribute="leadingMargin" constant="45" id="AFX-fh-6Mh"/>
+                            <constraint firstAttribute="centerX" secondItem="K4v-76-drv" secondAttribute="centerX" constant="1" id="ATm-sL-HnU"/>
                             <constraint firstAttribute="centerX" secondItem="4PT-S9-Zb0" secondAttribute="centerX" constant="1" id="BPo-0g-3B4"/>
                             <constraint firstItem="fmA-nf-dRg" firstAttribute="top" secondItem="pDE-se-yeZ" secondAttribute="bottom" constant="8" id="C6R-tG-VBb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VPC-rS-8Wr" secondAttribute="trailing" id="J3j-qk-RhB"/>
@@ -203,6 +243,7 @@
                             <constraint firstItem="fmA-nf-dRg" firstAttribute="top" secondItem="pDE-se-yeZ" secondAttribute="bottom" constant="26" id="JRp-pJ-Xi9"/>
                             <constraint firstAttribute="centerX" secondItem="VPC-rS-8Wr" secondAttribute="centerX" constant="-54" id="QRk-FW-qbX"/>
                             <constraint firstAttribute="centerX" secondItem="J7D-wZ-Xrq" secondAttribute="centerX" id="Qts-b3-war"/>
+                            <constraint firstItem="J7D-wZ-Xrq" firstAttribute="top" secondItem="Upc-Yh-bkq" secondAttribute="bottom" constant="8" id="TIJ-99-sr5"/>
                             <constraint firstItem="l1V-Ex-SWx" firstAttribute="top" secondItem="VPC-rS-8Wr" secondAttribute="bottom" id="U2D-dm-Jb3"/>
                             <constraint firstAttribute="centerY" secondItem="VPC-rS-8Wr" secondAttribute="centerY" id="Xod-ng-deE"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="top" secondItem="K7p-WP-6PC" secondAttribute="topMargin" id="aGu-3k-O4b"/>
@@ -210,15 +251,22 @@
                             <constraint firstAttribute="centerX" secondItem="fmA-nf-dRg" secondAttribute="centerX" id="cnP-IJ-pH3"/>
                             <constraint firstAttribute="centerX" secondItem="fmA-nf-dRg" secondAttribute="centerX" id="dX5-q9-Trs"/>
                             <constraint firstAttribute="centerY" secondItem="fmA-nf-dRg" secondAttribute="centerY" id="eMf-Y1-p1M"/>
+                            <constraint firstAttribute="centerX" secondItem="a3c-S7-p8j" secondAttribute="centerX" constant="1" id="esa-gS-xbB"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="top" secondItem="K7p-WP-6PC" secondAttribute="topMargin" id="foV-O1-XY0"/>
                             <constraint firstAttribute="centerX" secondItem="K4v-76-drv" secondAttribute="centerX" constant="1" id="hxv-HK-zAS"/>
+                            <constraint firstAttribute="centerX" secondItem="Upc-Yh-bkq" secondAttribute="centerX" constant="1" id="kg0-je-D5u"/>
                             <constraint firstItem="fmA-nf-dRg" firstAttribute="top" secondItem="pDE-se-yeZ" secondAttribute="bottom" constant="36" id="l8z-qr-QcC"/>
+                            <constraint firstAttribute="centerY" secondItem="J7D-wZ-Xrq" secondAttribute="centerY" id="n3o-qy-ux4"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="leading" secondItem="K7p-WP-6PC" secondAttribute="leadingMargin" id="o17-g2-U3b"/>
+                            <constraint firstItem="4PT-S9-Zb0" firstAttribute="top" secondItem="K4v-76-drv" secondAttribute="bottom" constant="8" id="pM6-VJ-J4S"/>
                             <constraint firstAttribute="centerY" secondItem="VPC-rS-8Wr" secondAttribute="centerY" constant="-12" id="qP6-w3-eKQ"/>
                             <constraint firstItem="VPC-rS-8Wr" firstAttribute="top" secondItem="K7p-WP-6PC" secondAttribute="topMargin" id="sHd-DD-CAe"/>
                             <constraint firstAttribute="centerX" secondItem="Upc-Yh-bkq" secondAttribute="centerX" constant="1" id="tAq-xS-akr"/>
                             <constraint firstItem="Upc-Yh-bkq" firstAttribute="top" secondItem="4PT-S9-Zb0" secondAttribute="bottom" constant="8" id="u1O-UW-OQq"/>
+                            <constraint firstAttribute="centerX" secondItem="J7D-wZ-Xrq" secondAttribute="centerX" constant="1" id="vIe-iz-OzM"/>
+                            <constraint firstItem="K4v-76-drv" firstAttribute="top" secondItem="Upc-Yh-bkq" secondAttribute="bottom" constant="8" id="xUI-AL-QEr"/>
                             <constraint firstItem="l1V-Ex-SWx" firstAttribute="top" secondItem="VPC-rS-8Wr" secondAttribute="bottom" id="yoM-0B-9yN"/>
+                            <constraint firstItem="a3c-S7-p8j" firstAttribute="top" secondItem="J7D-wZ-Xrq" secondAttribute="bottom" constant="8" id="z1R-Th-xgU"/>
                             <constraint firstAttribute="centerX" secondItem="fmA-nf-dRg" secondAttribute="centerX" id="zbq-Pc-a5U"/>
                         </constraints>
                         <variation key="default">
@@ -232,12 +280,20 @@
                                 <exclude reference="foV-O1-XY0"/>
                                 <exclude reference="o17-g2-U3b"/>
                                 <exclude reference="qP6-w3-eKQ"/>
+                                <exclude reference="tAq-xS-akr"/>
+                                <exclude reference="u1O-UW-OQq"/>
+                                <exclude reference="6Ni-Gw-gCS"/>
+                                <exclude reference="hxv-HK-zAS"/>
+                                <exclude reference="xUI-AL-QEr"/>
                                 <exclude reference="30w-Y6-Vzc"/>
                                 <exclude reference="C6R-tG-VBb"/>
                                 <exclude reference="JRp-pJ-Xi9"/>
                                 <exclude reference="dX5-q9-Trs"/>
                                 <exclude reference="l8z-qr-QcC"/>
                                 <exclude reference="zbq-Pc-a5U"/>
+                                <exclude reference="JBe-JE-eRH"/>
+                                <exclude reference="Qts-b3-war"/>
+                                <exclude reference="cCB-Se-eJX"/>
                                 <exclude reference="1PY-Cm-6PR"/>
                                 <exclude reference="U2D-dm-Jb3"/>
                                 <exclude reference="yoM-0B-9yN"/>
@@ -246,6 +302,7 @@
                     </view>
                     <connections>
                         <outlet property="centerBar" destination="eMf-Y1-p1M" id="PKh-Je-xFs"/>
+                        <outlet property="loginButton" destination="a3c-S7-p8j" id="Jo5-Zp-lk3"/>
                         <outlet property="logoImageView" destination="fmA-nf-dRg" id="jNn-Bp-slO"/>
                         <outlet property="passwordImageView" destination="Upc-Yh-bkq" id="3Lf-nT-pSO"/>
                         <outlet property="passwordTextField" destination="J7D-wZ-Xrq" id="JMU-hw-IrC"/>
@@ -303,7 +360,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="1Hg-b2-bQD"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="19"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -312,7 +369,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="31i-Vn-7Ba"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -324,6 +381,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="etW-jV-LcB" secondAttribute="trailing" constant="23" id="XjF-rQ-jvi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="gradeLabel" destination="etW-jV-LcB" id="AzK-iC-Nre"/>
                                             <outlet property="termLabel" destination="qaG-V6-SiQ" id="icH-VH-0Eh"/>
@@ -411,7 +469,9 @@
     </scenes>
     <resources>
         <image name="BG-median-1" width="320" height="568"/>
-        <image name="Logo" width="320" height="100"/>
+        <image name="LoginButton-Pressed.png" width="500" height="100"/>
+        <image name="LoginButton.png" width="500" height="100"/>
+        <image name="Logo.png" width="640" height="200"/>
         <image name="TextField.png" width="500" height="100"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
