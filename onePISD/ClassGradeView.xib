@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassGradeView" customModule="onePISD" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Vx6-7U-Jmp" id="f5s-qh-1aq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController title="gradeView" nibName="ClassGradeView" id="6Rh-97-4Ih" customClass="ClassGradeView" customModule="onePISD" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="HRh-D3-f75"/>
+                <viewControllerLayoutGuide type="bottom" id="e1T-B9-ldr"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="Vx6-7U-Jmp">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+            </view>
+            <point key="canvasLocation" x="315" y="318"/>
+        </viewController>
+    </objects>
+</document>

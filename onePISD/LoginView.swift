@@ -75,6 +75,10 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		self.animateLogin()
 	}
 	
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return UIStatusBarStyle.LightContent
+	}
+	
 	// MARK: Private Functions
 	
 	private func prepareForAnimate() {

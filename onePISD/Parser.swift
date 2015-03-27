@@ -12,7 +12,7 @@
 	_	support for semester courses, and for dropped/1.5 credit courses
 	_	rewrite some shit
 	_	fix private functions
-	_	write a damn substring method, or a class.
+	*	write a damn substring method, or a class. (Sane String)
 */
 
 import Foundation
@@ -20,54 +20,14 @@ import UIKit
 
 class Parser {
 	class func getLTfromHTML(html: String) -> String {
-		
 		var substring = html["name=\"lt\" value=\"", "name=\"_eventId\""]
 		return substring.substringTo(substring.length() - 32)
-		
-		/*
-		let range_start = html.rangeOfString("name=\"lt\" value=\"")
-		
-		let range_end = html.rangeOfString("name=\"_eventId\"")
-		
-		var index_end = range_end!.startIndex
-		
-		for i in 0...31 {
-		index_end = index_end.predecessor()	//It's sad how bad swift actually is.
-		}
-		println(html.substringWithRange(Range<String.Index>(start: range_start!.endIndex, end: index_end)))
-		
-		println(substring.substringTo(substring.length() - 32))
-		return html.substringWithRange(Range<String.Index>(start: range_start!.endIndex, end: index_end))
-		*/
 	}
 	
 	
 	class func getUIDfromHTML(html: String) -> String {
-		var index_start = html.rangeOfString("\"uID\" value=\"")?.endIndex
-		if let index = index_start {
-			var index_end = index
-			
-			for _ in 1...50 {
-				index_end = index_end.successor()
-			}
-			return html.substringWithRange(Range<String.Index>(start: index, end: index_end))
-		}
-		
-		//assert(false, "PISD has some problems, or they changed their website. Check if uID is the same as Student ID")
-		
-		index_start = html.rangeOfString("getUserId")?.endIndex
-		if let index = index_start {
-			let substring = html.substringFromIndex(index)
-			var buffer: NSString?
-			let scanner = NSScanner(string: substring)
-			scanner.scanUpToString("return", intoString: nil)
-			scanner.scanString("return", intoString: nil)
-			scanner.scanUpToString("\"", intoString: nil)
-			scanner.scanString("\"", intoString: nil)
-			scanner.scanUpToString("\"", intoString: &buffer)
-			return buffer!
-		}
-		return ""
+		var starting_index = html["\"uID\" value=\""] + "\"uID\" value=\"".length()
+		return html.substring(start: starting_index, end: starting_index + 50)
 	}
 	
 	class func getRedirectfromHTML(html: String) -> String {

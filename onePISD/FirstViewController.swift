@@ -21,9 +21,11 @@ class FirstViewController: UIViewController {
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		View.currentView = self
+		/*
 		MainSession.session.loadAttendanceSummary { (response, html_data, error) in
 			println(html_data)
 		}
+		*/
 	}
 	
 }

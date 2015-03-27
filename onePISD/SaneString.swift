@@ -33,11 +33,14 @@ extension String {
 			swap(&start, &end)
 			flipped = true
 		}
+		let substring = (self as NSString).substringWithRange(NSMakeRange(start, end - start))
+		//let substring = self[advance(self.startIndex, start)..<advance(self.startIndex, end)]
 		
 		if flipped {
-			return self[advance(self.startIndex, start)..<advance(self.startIndex, end - start)].reverse()
+			return substring.reverse()
 		}
-		return self[advance(self.startIndex, start)..<advance(self.startIndex, end - start)]
+		
+		return substring
 	}
 	
 	func substring (#start: String, end: String) -> String {

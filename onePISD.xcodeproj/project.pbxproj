@@ -16,6 +16,8 @@
 		D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91424DC1A9DA1710042A81E /* UICardCell.xib */; };
 		D91424E11A9DA1710042A81E /* UICardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DD1A9DA1710042A81E /* UICardViewController.swift */; };
 		D91424E51A9EA1F10042A81E /* CardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D91424E41A9EA1F10042A81E /* CardBG.png */; };
+		D93883601AB666A000EEB0BD /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938835F1AB666A000EEB0BD /* CAPSPageMenu.swift */; };
+		D93883621AB6672000EEB0BD /* MainGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93883611AB6672000EEB0BD /* MainGradeViewController.swift */; };
 		D94B177B1AA8CB1200A681EA /* AttendanceSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */; };
 		D9512EA11A9BE787005A06A3 /* AssignmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */; };
 		D955E43B1A9584A50009D94A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955E43A1A9584A50009D94A /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 		D9D3EC7B1AB5EA9000CAA288 /* BG-gauss-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */; };
 		D9D3EC7D1AB5EC5D00CAA288 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */; };
 		D9D3EC7F1AB5F00400CAA288 /* LoginButton-Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */; };
+		D9F61D141AB7DA4600C78434 /* ClassGradeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F61D131AB7DA4600C78434 /* ClassGradeView.xib */; };
+		D9F61D1A1AB7DACA00C78434 /* ClassGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F61D191AB7DACA00C78434 /* ClassGradeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,8 @@
 		D91424DC1A9DA1710042A81E /* UICardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICardCell.xib; sourceTree = "<group>"; };
 		D91424DD1A9DA1710042A81E /* UICardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardViewController.swift; sourceTree = "<group>"; };
 		D91424E41A9EA1F10042A81E /* CardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBG.png; sourceTree = "<group>"; };
+		D938835F1AB666A000EEB0BD /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		D93883611AB6672000EEB0BD /* MainGradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGradeViewController.swift; sourceTree = "<group>"; };
 		D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceSummaryViewController.swift; sourceTree = "<group>"; };
 		D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentCell.swift; sourceTree = "<group>"; };
 		D955E4351A9584A50009D94A /* onePISD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onePISD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +150,8 @@
 		D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG-gauss-1@2x.png"; sourceTree = "<group>"; };
 		D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
 		D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginButton-Pressed.png"; sourceTree = "<group>"; };
+		D9F61D131AB7DA4600C78434 /* ClassGradeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassGradeView.xib; sourceTree = "<group>"; };
+		D9F61D191AB7DACA00C78434 /* ClassGradeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassGradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,7 @@
 		D91424D51A9D9A870042A81E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				D938835B1AB6669100EEB0BD /* PageMenu */,
 				D91424D91A9DA15A0042A81E /* UICardCell */,
 				D95CA8DC1A984E4100545646 /* Notifications */,
 				D955E47C1A96C77B0009D94A /* ViewControllers */,
@@ -183,6 +192,14 @@
 				D91424DD1A9DA1710042A81E /* UICardViewController.swift */,
 			);
 			name = UICardCell;
+			sourceTree = "<group>";
+		};
+		D938835B1AB6669100EEB0BD /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D938835F1AB666A000EEB0BD /* CAPSPageMenu.swift */,
+			);
+			name = PageMenu;
 			sourceTree = "<group>";
 		};
 		D955E42C1A9584A50009D94A = {
@@ -215,6 +232,7 @@
 				D955E4431A9584A50009D94A /* Images.xcassets */,
 				D955E4451A9584A50009D94A /* LaunchScreen.xib */,
 				D955E4381A9584A50009D94A /* Supporting Files */,
+				D9F61D131AB7DA4600C78434 /* ClassGradeView.xib */,
 			);
 			path = onePISD;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 		D955E47C1A96C77B0009D94A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9F61D181AB7DAB900C78434 /* NibFiles */,
 				D955E47A1A96C7770009D94A /* LoginView.swift */,
 				D955E43C1A9584A50009D94A /* FirstViewController.swift */,
 				D955E43E1A9584A50009D94A /* SecondViewController.swift */,
@@ -276,6 +295,7 @@
 				D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */,
 				D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */,
 				D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */,
+				D93883611AB6672000EEB0BD /* MainGradeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -306,6 +326,14 @@
 				D9A15C101AB5FB6D0017EB90 /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D9F61D181AB7DAB900C78434 /* NibFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D9F61D191AB7DACA00C78434 /* ClassGradeView.swift */,
+			);
+			name = NibFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +462,7 @@
 				D90BB1711AAFB749009265BA /* OpenSans-Light.ttf in Resources */,
 				D9D3EC7F1AB5F00400CAA288 /* LoginButton-Pressed.png in Resources */,
 				D955E4441A9584A50009D94A /* Images.xcassets in Resources */,
+				D9F61D141AB7DA4600C78434 /* ClassGradeView.xib in Resources */,
 				D91424E51A9EA1F10042A81E /* CardBG.png in Resources */,
 				D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */,
 				D9D3EC791AB5E76600CAA288 /* TextField.png in Resources */,
@@ -457,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9AFED4F1A9BCDFF0087277F /* GradeCell.swift in Sources */,
+				D9F61D1A1AB7DACA00C78434 /* ClassGradeView.swift in Sources */,
 				D91424DF1A9DA1710042A81E /* UICardCell.swift in Sources */,
 				D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */,
 				D95CA8DE1A984E5A00545646 /* Course.swift in Sources */,
@@ -472,12 +502,14 @@
 				D955E47E1A96C8DE0009D94A /* ViewConstants.swift in Sources */,
 				D955E4781A958CAF0009D94A /* Parser.swift in Sources */,
 				D955E47B1A96C7770009D94A /* LoginView.swift in Sources */,
+				D93883601AB666A000EEB0BD /* CAPSPageMenu.swift in Sources */,
 				D9512EA11A9BE787005A06A3 /* AssignmentCell.swift in Sources */,
 				D955E43B1A9584A50009D94A /* AppDelegate.swift in Sources */,
 				D9584D241A9B89DA006EAB90 /* TestViewController.swift in Sources */,
 				D9584D2E1A9BA602006EAB90 /* GradeSummaryViewController.swift in Sources */,
 				D955E43D1A9584A50009D94A /* FirstViewController.swift in Sources */,
 				D91424DE1A9DA1710042A81E /* UICardLayout.swift in Sources */,
+				D93883621AB6672000EEB0BD /* MainGradeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
