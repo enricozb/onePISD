@@ -22,8 +22,8 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var loginButton: UIButton!
 	
 	func debugLogin() {
-		usernameTextField.text = "***REMOVED***"
-		passwordTextField.text = "***REMOVED***"
+		usernameTextField.text = "username"
+		passwordTextField.text = "password"
 		buttonPressed(self)
 	}
 	

@@ -50,7 +50,7 @@ class MainGradeViewController: UIViewController {
 	
 	private func initBackgroundView() {
 		let imageView = UIImageView(frame: self.view.frame)
-		imageView.image = UIImage(named: "BG-median-1")
+		imageView.image = UIImage(named: "BG-gauss-100")
 		self.view.addSubview(imageView)
 		self.view.sendSubviewToBack(imageView)
 	}

@@ -24,6 +24,9 @@ DerivedData
 /PSD\ Templates
 /PNChart
 
+#info
+remove.txt
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
