@@ -16,6 +16,8 @@
 		D91424E01A9DA1710042A81E /* UICardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91424DC1A9DA1710042A81E /* UICardCell.xib */; };
 		D91424E11A9DA1710042A81E /* UICardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91424DD1A9DA1710042A81E /* UICardViewController.swift */; };
 		D91424E51A9EA1F10042A81E /* CardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = D91424E41A9EA1F10042A81E /* CardBG.png */; };
+		D92D3A1F1AC6F57D00371500 /* CourseGradeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D3A1E1AC6F57D00371500 /* CourseGradeTableView.swift */; };
+		D92D3A241AC6F76600371500 /* SixWeekGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92D3A231AC6F76600371500 /* SixWeekGradeCell.swift */; };
 		D93883601AB666A000EEB0BD /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938835F1AB666A000EEB0BD /* CAPSPageMenu.swift */; };
 		D93883621AB6672000EEB0BD /* MainGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93883611AB6672000EEB0BD /* MainGradeViewController.swift */; };
 		D94B177B1AA8CB1200A681EA /* AttendanceSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */; };
@@ -36,6 +38,7 @@
 		D9584D2E1A9BA602006EAB90 /* GradeSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9584D2D1A9BA602006EAB90 /* GradeSummaryViewController.swift */; };
 		D95CA8BA1A97B40800545646 /* SwiftOverlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CA8B91A97B40800545646 /* SwiftOverlays.swift */; };
 		D95CA8DE1A984E5A00545646 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95CA8DD1A984E5A00545646 /* Course.swift */; };
+		D98F67D31AD0C941001F5001 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F67D21AD0C941001F5001 /* Colors.swift */; };
 		D9A15C131AB5FB7A0017EB90 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D9A15C0A1AB5FB6D0017EB90 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9AFED4F1A9BCDFF0087277F /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */; };
 		D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFED531A9BD3380087277F /* AssignmentViewController.swift */; };
@@ -45,6 +48,7 @@
 		D9D3EC7B1AB5EA9000CAA288 /* BG-gauss-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */; };
 		D9D3EC7D1AB5EC5D00CAA288 /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */; };
 		D9D3EC7F1AB5F00400CAA288 /* LoginButton-Pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */; };
+		D9F55B681ACFA1D100397C02 /* CircleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F55B671ACFA1D100397C02 /* CircleGraph.swift */; };
 		D9F61D141AB7DA4600C78434 /* ClassGradeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F61D131AB7DA4600C78434 /* ClassGradeView.xib */; };
 		D9F61D1A1AB7DACA00C78434 /* ClassGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F61D191AB7DACA00C78434 /* ClassGradeView.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +121,8 @@
 		D91424DC1A9DA1710042A81E /* UICardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UICardCell.xib; sourceTree = "<group>"; };
 		D91424DD1A9DA1710042A81E /* UICardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICardViewController.swift; sourceTree = "<group>"; };
 		D91424E41A9EA1F10042A81E /* CardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CardBG.png; sourceTree = "<group>"; };
+		D92D3A1E1AC6F57D00371500 /* CourseGradeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseGradeTableView.swift; sourceTree = "<group>"; };
+		D92D3A231AC6F76600371500 /* SixWeekGradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixWeekGradeCell.swift; sourceTree = "<group>"; };
 		D938835F1AB666A000EEB0BD /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		D93883611AB6672000EEB0BD /* MainGradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGradeViewController.swift; sourceTree = "<group>"; };
 		D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceSummaryViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		D9584D2D1A9BA602006EAB90 /* GradeSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeSummaryViewController.swift; sourceTree = "<group>"; };
 		D95CA8B91A97B40800545646 /* SwiftOverlays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOverlays.swift; sourceTree = "<group>"; };
 		D95CA8DD1A984E5A00545646 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		D98F67D21AD0C941001F5001 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D9A15C021AB5FB6D0017EB90 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = External_Libraries/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D9AFED4E1A9BCDFF0087277F /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
 		D9AFED531A9BD3380087277F /* AssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +157,7 @@
 		D9D3EC7A1AB5EA9000CAA288 /* BG-gauss-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG-gauss-1@2x.png"; sourceTree = "<group>"; };
 		D9D3EC7C1AB5EC5D00CAA288 /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginButton.png; sourceTree = "<group>"; };
 		D9D3EC7E1AB5F00400CAA288 /* LoginButton-Pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LoginButton-Pressed.png"; sourceTree = "<group>"; };
+		D9F55B671ACFA1D100397C02 /* CircleGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraph.swift; sourceTree = "<group>"; };
 		D9F61D131AB7DA4600C78434 /* ClassGradeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassGradeView.xib; sourceTree = "<group>"; };
 		D9F61D191AB7DACA00C78434 /* ClassGradeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassGradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,10 +183,12 @@
 		D91424D51A9D9A870042A81E /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				D9F55B631ACFA1BC00397C02 /* CircleGraph */,
 				D938835B1AB6669100EEB0BD /* PageMenu */,
 				D91424D91A9DA15A0042A81E /* UICardCell */,
 				D95CA8DC1A984E4100545646 /* Notifications */,
 				D955E47C1A96C77B0009D94A /* ViewControllers */,
+				D98F67D21AD0C941001F5001 /* Colors.swift */,
 			);
 			name = Frontend;
 			sourceTree = "<group>";
@@ -296,6 +306,8 @@
 				D9512EA01A9BE787005A06A3 /* AssignmentCell.swift */,
 				D94B177A1AA8CB1200A681EA /* AttendanceSummaryViewController.swift */,
 				D93883611AB6672000EEB0BD /* MainGradeViewController.swift */,
+				D92D3A1E1AC6F57D00371500 /* CourseGradeTableView.swift */,
+				D92D3A231AC6F76600371500 /* SixWeekGradeCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +338,14 @@
 				D9A15C101AB5FB6D0017EB90 /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D9F55B631ACFA1BC00397C02 /* CircleGraph */ = {
+			isa = PBXGroup;
+			children = (
+				D9F55B671ACFA1D100397C02 /* CircleGraph.swift */,
+			);
+			name = CircleGraph;
 			sourceTree = "<group>";
 		};
 		D9F61D181AB7DAB900C78434 /* NibFiles */ = {
@@ -491,6 +511,7 @@
 				D9AFED541A9BD3380087277F /* AssignmentViewController.swift in Sources */,
 				D95CA8DE1A984E5A00545646 /* Course.swift in Sources */,
 				D91424E11A9DA1710042A81E /* UICardViewController.swift in Sources */,
+				D92D3A1F1AC6F57D00371500 /* CourseGradeTableView.swift in Sources */,
 				D94B177B1AA8CB1200A681EA /* AttendanceSummaryViewController.swift in Sources */,
 				D9CA0F5C1A9A2B3D0010B639 /* Assignment.swift in Sources */,
 				D90DC6101AA98BAC002B85FD /* SaneString.swift in Sources */,
@@ -500,9 +521,12 @@
 				D955E43F1A9584A50009D94A /* SecondViewController.swift in Sources */,
 				D9584D2B1A9B9551006EAB90 /* TestAssignmentViewController.swift in Sources */,
 				D955E47E1A96C8DE0009D94A /* ViewConstants.swift in Sources */,
+				D9F55B681ACFA1D100397C02 /* CircleGraph.swift in Sources */,
 				D955E4781A958CAF0009D94A /* Parser.swift in Sources */,
 				D955E47B1A96C7770009D94A /* LoginView.swift in Sources */,
 				D93883601AB666A000EEB0BD /* CAPSPageMenu.swift in Sources */,
+				D98F67D31AD0C941001F5001 /* Colors.swift in Sources */,
+				D92D3A241AC6F76600371500 /* SixWeekGradeCell.swift in Sources */,
 				D9512EA11A9BE787005A06A3 /* AssignmentCell.swift in Sources */,
 				D955E43B1A9584A50009D94A /* AppDelegate.swift in Sources */,
 				D9584D241A9B89DA006EAB90 /* TestViewController.swift in Sources */,

@@ -21,6 +21,12 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	
 	@IBOutlet weak var loginButton: UIButton!
 	
+	func debugLogin() {
+		usernameTextField.text = "***REMOVED***"
+		passwordTextField.text = "***REMOVED***"
+		buttonPressed(self)
+	}
+	
 	func textFieldShouldReturn(textField: UITextField!) -> Bool {
 		self.view.endEditing(true)
 		return true
@@ -71,8 +77,8 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		View.currentView = self
-		
 		self.animateLogin()
+		self.debugLogin()
 	}
 	
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {

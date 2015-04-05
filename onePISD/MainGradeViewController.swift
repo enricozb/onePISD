@@ -13,27 +13,84 @@ class MainGradeViewController: UIViewController {
 	var pageMenu : CAPSPageMenu?
 	
 	override func viewDidLoad() {
-		//#34495e
-		self.navigationController?.navigationBar.barTintColor = UIColor(red: 52/255.0, green: 73/255.0, blue: 94/255.0, alpha: 0)
+		super.viewDidLoad()
 		
+		initStatusBarView()
+		initNavigationBar()
+		initBackgroundView()
+		initPageMenu()
+		initTabBar()
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	private func initStatusBarView() {
+		let sbview = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 20))
+		sbview.backgroundColor = Colors.getColor(4)
+		self.view.addSubview(sbview)
+	}
+	
+	private func initNavigationBar() {
 		self.navigationItem.title = "Grade Summary"
-		self.navigationController?.navigationBar.clipsToBounds = true
-		var controllers : [UIViewController] = []
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+		self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+		self.navigationController?.navigationBar.backgroundColor = Colors.getColor(4)
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationController?.navigationBar.translucent = true
+		self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+		self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+		self.navigationController?.navigationBar.titleTextAttributes = [
+			NSForegroundColorAttributeName: Colors.getColor(0),
+			NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!
+		]
+	}
+	
+	private func initBackgroundView() {
+		let imageView = UIImageView(frame: self.view.frame)
+		imageView.image = UIImage(named: "BG-median-1")
+		self.view.addSubview(imageView)
+		self.view.sendSubviewToBack(imageView)
+	}
+	
+	private func initPageMenu() {
+		var controllerArray : [UIViewController] = []
+		
 		for course in MainSession.session.courses()! {
-			var controller : UIViewController = ClassGradeView()
+			var controller = CourseGradeTableView()
+			controller.setCourse(course)
+			
 			controller.title = course.name
-			controllers.append(controller)
+			controllerArray.append(controller as UIViewController)
 		}
-		var parameters: [String : AnyObject] = [
+		
+		var parameters: [String: AnyObject] = [
+			"scrollMenuBackgroundColor": Colors.getColor(3),
+			"viewBackgroundColor": UIColor.clearColor(),
+			"selectionIndicatorColor": Colors.getColor(0),
+			"addBottomMenuHairline": false,
+			"menuItemFont": UIFont(name: "HelveticaNeue-Light", size: 11.0)!,
+			"menuHeight": 50.0,
+			"selectionIndicatorHeight": 2.0,
 			"menuItemWidthBasedOnTitleTextWidth": true,
-			"useMenuLikeSegmentedControl": false,
-			"menuItemSeparatorPercentageHeight": 0.1,
-			"selectionIndicatorHeight" : 0,
-			"scrollMenuBackgroundColor" : UIColor(red: 52/255.0, green: 73/255.0, blue: 94/255.0, alpha: 1),
-			"menuItemFont" : UIFont(name: "HelveticaNeue-Light", size: 16)!
+			"selectedMenuItemLabelColor": Colors.getColor(0),
+			"unselectedMenuItemLabelColor": Colors.getColor(2)
 		]
 		
-		pageMenu = CAPSPageMenu(viewControllers: controllers, frame: CGRectMake(0.0, 64, self.view.frame.width, self.view.frame.height - 64), options: parameters) //Nav-bar and status bar height
+		pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 64, self.view.frame.width, self.view.frame.height), options: parameters)
 		self.view.addSubview(pageMenu!.view)
+	}
+	
+	private func initTabBar() {
+		self.tabBarController?.tabBar.backgroundImage = UIImage()
+		self.tabBarController?.tabBar.backgroundColor = Colors.getColor(4)
+		self.tabBarController?.tabBar.shadowImage = UIImage()
+		self.tabBarController?.tabBar.translucent = true
+		//self.tabBarController?.tabBar.barStyle = UIBarStyle.BlackTranslucent
+		self.tabBarController?.tabBar.tintColor = UIColor.blackColor()
+		self.tabBarController?.tabBar.selectedImageTintColor = Colors.getColor(0)
+		
 	}
 }

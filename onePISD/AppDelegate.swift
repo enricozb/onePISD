@@ -13,9 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	
+		UITabBarItem.appearance().setTitleTextAttributes(
+			[
+				NSForegroundColorAttributeName: Colors.getColor(2)
+			], forState: UIControlState.Normal)
+		UITabBarItem.appearance().setTitleTextAttributes(
+			[
+				NSForegroundColorAttributeName: Colors.getColor(0)
+			], forState: UIControlState.Selected)
 		
+		//UINavigationBar.appearance().barTintColor = UIColor(red: 52/255.0, green: 73/255.0, blue: 94/255.0, alpha: 1)
+		//UINavigationBar.appearance().translucent = false
 		// Override point for customization after application launch.
 		/*
 		var navigationBarAppearace = UINavigationBar.appearance()

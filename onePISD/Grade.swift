@@ -21,11 +21,13 @@ class Grade {
 	let termID : Int
 	let grade : Int?
 	let blank : Bool
+	let index : Int
 	var assignments : [Assignment]?
 	
-	init(termID: Int, grade: Int?) {
+	init(termID: Int, grade: Int?, index: Int) {
 		self.termID = termID
 		self.grade = grade
 		self.blank = false
+		self.index = index
 	}
 }

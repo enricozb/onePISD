@@ -160,10 +160,10 @@ class Parser {
 				if studentID == 0 {
 					studentID = possibleStudentID!
 				}
-				grades.append(Grade(termID: tid, grade: grade))
+				grades.append(Grade(termID: tid, grade: grade, index: i))
 			}
 			else {
-				grades.append(Grade(termID: i/5, grade: grade))
+				grades.append(Grade(termID: i/5, grade: grade, index: i))
 			}
 			scanner.scanUpToString("<td", intoString: nil)
 		}
