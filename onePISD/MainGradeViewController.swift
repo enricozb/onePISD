@@ -50,7 +50,7 @@ class MainGradeViewController: UIViewController {
 	
 	private func initBackgroundView() {
 		let imageView = UIImageView(frame: self.view.frame)
-		imageView.image = UIImage(named: "BG-gauss-100")
+		imageView.image = UIImage(named: "BG-gauss-100-2")
 		self.view.addSubview(imageView)
 		self.view.sendSubviewToBack(imageView)
 	}
@@ -67,7 +67,7 @@ class MainGradeViewController: UIViewController {
 		}
 		
 		var parameters: [String: AnyObject] = [
-			"scrollMenuBackgroundColor": Colors.getColor(3),
+			"scrollMenuBackgroundColor": Colors.getColor(4),
 			"viewBackgroundColor": UIColor.clearColor(),
 			"selectionIndicatorColor": Colors.getColor(0),
 			"addBottomMenuHairline": false,
@@ -76,7 +76,7 @@ class MainGradeViewController: UIViewController {
 			"selectionIndicatorHeight": 2.0,
 			"menuItemWidthBasedOnTitleTextWidth": true,
 			"selectedMenuItemLabelColor": Colors.getColor(0),
-			"unselectedMenuItemLabelColor": Colors.getColor(2)
+			"unselectedMenuItemLabelColor": UIColor.darkGrayColor()
 		]
 		
 		pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 64, self.view.frame.width, self.view.frame.height), options: parameters)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class SixWeekGradeCell: UITableViewCell {
-	
+
 	class var height: CGFloat { return 100 }
 	class var x_padding: CGFloat { return 0 }
 	class var y_padding: CGFloat { return 0 }
@@ -23,6 +23,8 @@ class SixWeekGradeCell: UITableViewCell {
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.selectedBackgroundView.backgroundColor = UIColor.orangeColor()
+		self.backgroundColor = UIColor.clearColor()
 	}
 
 	required init(coder aDecoder: NSCoder) {
@@ -62,13 +64,11 @@ class SixWeekGradeCell: UITableViewCell {
 		if circle != nil {
 			circle!.removeFromSuperview()
 		}
-		if let gradeValue = grade!.grade {
-			let inset: CGFloat = 20
-			circle = CircleGraph(frame: CGRect(x: inset/2, y: inset/2, width: internalView!.frame.height - inset, height: internalView!.frame.height - inset), progress: Float(gradeValue)/100.0)
-			internalView!.addSubview(circle!)
-		}
+		let inset: CGFloat = 10
+		circle = CircleGraph(frame: CGRect(x: inset/2, y: inset/2, width: internalView!.frame.height - inset, height: internalView!.frame.height - inset), grade: self.grade!)
+		internalView!.addSubview(circle!)
 	}
-	
+
 	func initLabel() {
 		if label != nil {
 			label!.removeFromSuperview()
@@ -86,8 +86,7 @@ class SixWeekGradeCell: UITableViewCell {
 	}
 	
 	func willDisplay() {
-		self.backgroundColor = UIColor.clearColor()
-		self.contentView.backgroundColor = UIColor.clearColor()
+		
 	}
 
 	func destroyContent() {

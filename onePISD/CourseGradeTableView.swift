@@ -30,7 +30,8 @@ class CourseGradeTableView: UIViewController, UITableViewDelegate, UITableViewDa
 	override func viewDidLoad() {
 		tableView.backgroundColor = UIColor.clearColor()
 		tableView.tableFooterView = UIView(frame: CGRectZero)
-		tableView.separatorColor = Colors.getColor(0)
+		tableView.separatorColor = UIColor.clearColor()
+		tableView.separatorInset = UIEdgeInsets(top: 0, left: 60, bottom: 0, right: 0)
 		tableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 163);
 		tableView.delegate = self
 		tableView.dataSource = self
@@ -67,9 +68,5 @@ class CourseGradeTableView: UIViewController, UITableViewDelegate, UITableViewDa
 		
 		return cell as UITableViewCell
 		
-	}
-	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		println("You selected cell #\(indexPath.row)!")
 	}
 }
