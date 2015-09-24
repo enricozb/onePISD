@@ -15,7 +15,7 @@ public class Colors {
 		return 3
 	}
 	
-	class func makeUIColor(#r: Int, g: Int, b: Int, a: Float) -> UIColor {
+	class func makeUIColor(r r: Int, g: Int, b: Int, a: Float) -> UIColor {
 		return UIColor(red: CGFloat(Float(r)/255.0), green: CGFloat(Float(g)/255.0), blue: CGFloat(Float(b)/255.0), alpha: CGFloat(a))
 	}
 	

@@ -18,12 +18,15 @@ class CourseGradeTableView: UIViewController, UITableViewDelegate, UITableViewDa
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 	}
+    
+    /*
+    override init() {
+        super.init()
+    }*/
 	
-	override init() {
-		super.init()
-	}
-	
-	required init(coder aDecoder: NSCoder) {
+	//required init?;?(coder aDecoder: NSCoder) {
+
+	required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
 	
@@ -57,12 +60,12 @@ class CourseGradeTableView: UIViewController, UITableViewDelegate, UITableViewDa
 	}
 	
 	func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-		(cell as SixWeekGradeCell).willDisplay()
+		(cell as! SixWeekGradeCell).willDisplay()
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
-		var cell = tableView.dequeueReusableCellWithIdentifier("cell") as SixWeekGradeCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! SixWeekGradeCell
 		cell.setContent(grades?[indexPath.item], tableView: tableView)
 		cell.initView()
 		

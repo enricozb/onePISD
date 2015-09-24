@@ -27,7 +27,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		buttonPressed(self)
 	}
 	
-	func textFieldShouldReturn(textField: UITextField!) -> Bool {
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
 		self.view.endEditing(true)
 		return true
 	}
@@ -36,20 +36,20 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		self.view.endEditing(true)
 		self.loginButton.enabled = false
 		View.clearOverlays()
-		MainSession.session.setCredentials(username: usernameTextField.text, password: passwordTextField.text)
+		MainSession.session.setCredentials(username: usernameTextField.text!, password: passwordTextField.text!)
 		MainSession.session.login { (response, html_data, error) in
 			if error == SessionError.wrongCredentials {
-				println("Wrong Credentials")
+				print("Wrong Credentials", terminator: "")
 				self.loginButton.enabled = true
 				self.passwordTextField.text = ""
 				View.showTextOverlay("Incorrect Credentials", clearAfter: 2)
 			}
 			else if error == SessionError.noInternetConnection {
-				println("No Internet Connection")
+				print("No Internet Connection", terminator: "")
 				View.showTextOverlay("No Internet Connection", clearAfter: 2)
 			}
 			else {
-				println("Six Week Grades Loaded!")
+				print("Six Week Grades Loaded!", terminator: "")
 				View.loadView(Storyboard.GradeSummary, fromView: self)
 			}
 		}
@@ -58,9 +58,9 @@ class LoginView : UIViewController, UITextFieldDelegate {
 	
 	// MARK: UIView Functions
 	
-	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-		self.view.endEditing(true)
-	}
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

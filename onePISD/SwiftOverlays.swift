@@ -193,15 +193,15 @@ class SwiftOverlays: NSObject
         var notificationView: UIView?
         
         if sender.isKindOfClass(UITapGestureRecognizer) {
-            notificationView = (sender as UITapGestureRecognizer).view!
+            notificationView = (sender as! UITapGestureRecognizer).view!
         } else if sender.isKindOfClass(UIView) {
-            notificationView = (sender as UIView)
+            notificationView = (sender as! UIView)
         }
         
         UIView.animateWithDuration(Statics.bannerDissapearAnimationDuration,
             animations: { () -> Void in
                 let frame = notificationView!.frame
-                notificationView!.frame = frame.rectByOffsetting(dx: 0, dy: -frame.size.height)
+                notificationView!.frame = frame.offsetBy(dx: 0, dy: -frame.size.height)
             },
             completion: { (finished) -> Void in
                 notificationView!.removeFromSuperview()
@@ -224,7 +224,7 @@ class SwiftOverlays: NSObject
         let label = UILabel(frame: labelRect)
         label.font = Statics.font
         label.textColor = Statics.textColor
-        label.text = text
+        label.text = text as String
         label.numberOfLines = 0
         
         return label;

@@ -21,16 +21,18 @@ class CircleGraph: UIView {
 		setUp()
 	}
 	
-	required init(coder aDecoder: NSCoder) {
+	//required init?;?(coder aDecoder: NSCoder) {
+
+	required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
 	func setUp() {
 		circle_bg = createBgCircle()
-		self.layer.addSublayer(circle_bg)
+		self.layer.addSublayer(circle_bg!)
 		if grade.grade != nil {
 			circle_progress = createProgressCircle()
-			self.layer.addSublayer(circle_progress)
+			self.layer.addSublayer(circle_progress!)
 				
 			let label = createLabel()
 			self.addSubview(label)
@@ -44,14 +46,14 @@ class CircleGraph: UIView {
 		let y = self.frame.height/2 + radius + weight/2
 		let height = SixWeekGradeCell.height/2 - radius - weight/2
 		if grade.index % 5 != 4 {
-			var frame = CGRect(x: x, y: y, width: 1, height: height)
+			let frame = CGRect(x: x, y: y, width: 1, height: height)
 			let line1 = UIView(frame: frame)
 			line1.backgroundColor = UIColor.whiteColor()
 			self.addSubview(line1)
 		}
 		
 		if grade.index % 5 != 0 {
-			var frame = CGRect(x: x, y: y - radius * 2 - height - weight, width: 1, height: height)
+			let frame = CGRect(x: x, y: y - radius * 2 - height - weight, width: 1, height: height)
 			let line2 = UIView(frame: frame)
 			line2.backgroundColor = UIColor.whiteColor()
 			self.addSubview(line2)

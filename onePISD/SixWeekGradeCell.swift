@@ -23,11 +23,13 @@ class SixWeekGradeCell: UITableViewCell {
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		self.selectedBackgroundView.backgroundColor = UIColor.orangeColor()
+		self.selectedBackgroundView!.backgroundColor = UIColor.orangeColor()
 		self.backgroundColor = UIColor.clearColor()
 	}
 
-	required init(coder aDecoder: NSCoder) {
+    //required init?;?(coder aDecoder: NSCoder) {}
+
+	required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
 	
@@ -37,7 +39,7 @@ class SixWeekGradeCell: UITableViewCell {
 	}
 	
 	func initView() {
-		if internalView == nil {
+		if self.internalView == nil {
 			initInternalView()
 			initCircleGraph()
 			initLabel()
@@ -86,7 +88,6 @@ class SixWeekGradeCell: UITableViewCell {
 	}
 	
 	func willDisplay() {
-		
 	}
 
 	func destroyContent() {
@@ -108,6 +109,6 @@ class SixWeekGradeCell: UITableViewCell {
 		case 9: return "2nd Semester"
 		default: return ""
 		}
-	}
-	
+    }
 }
+

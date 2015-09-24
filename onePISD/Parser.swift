@@ -20,13 +20,13 @@ import UIKit
 
 class Parser {
 	class func getLTfromHTML(html: String) -> String {
-		var substring = html["name=\"lt\" value=\"", "name=\"_eventId\""]
+		let substring = html["name=\"lt\" value=\"", "name=\"_eventId\""]
 		return substring.substringTo(substring.length() - 32)
 	}
 	
 	
 	class func getUIDfromHTML(html: String) -> String {
-		var starting_index = html["\"uID\" value=\""] + "\"uID\" value=\"".length()
+		let starting_index = html["\"uID\" value=\""] + "\"uID\" value=\"".length()
 		return html.substring(start: starting_index, end: starting_index + 50)
 	}
 	
@@ -65,7 +65,7 @@ class Parser {
 			var value: NSString?
 			scanner.scanUpToString(endString, intoString: &value)
 			
-			form[name] = value
+			form[name] = value as String?
 		}
 		return form
 	}
@@ -117,7 +117,7 @@ class Parser {
 		var stringBuffer : NSString?
 		while scanner.scanString("<tr>", intoString: nil) {
 			scanner.scanUpToString("<tr>", intoString: &stringBuffer)
-			let singleAssignment = Parser.getSingleAssignmentFromHTML(stringBuffer!)
+			let singleAssignment = Parser.getSingleAssignmentFromHTML(stringBuffer! as String)
 			assignments.append(singleAssignment)
 		}
 		return assignments
@@ -137,13 +137,13 @@ class Parser {
 		
 		scanner.scanUpToString("<a href", intoString: nil)
 		scanner.scanUpToString("<th", intoString: &stringBuffer)
-		let (title, enrollmentID) = extractClassTitleAndID(stringBuffer!)
+		let (title, enrollmentID) = extractClassTitleAndID(stringBuffer! as String)
 		
 		scanner.scanUpToString(">", intoString: nil)
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 	
-		let period = (stringBuffer as String).toInt()!
+		let period = Int(stringBuffer as! String)
 		var grades = [Grade]()
 		scanner.scanUpToString("<td", intoString: nil) //Begin grade grabbing
 		
@@ -155,7 +155,7 @@ class Parser {
 		
 		for i in 0...9 {
 			scanner.scanUpToString("</td", intoString: &stringBuffer)
-			let (grade, termID, possibleStudentID) = self.extractGradeAndTermIDAndStudentID(stringBuffer!)
+			let (grade, termID, possibleStudentID) = self.extractGradeAndTermIDAndStudentID(stringBuffer! as String)
 			if let tid = termID {
 				if studentID == 0 {
 					studentID = possibleStudentID!
@@ -167,7 +167,7 @@ class Parser {
 			}
 			scanner.scanUpToString("<td", intoString: nil)
 		}
-		return (Course(name: title, period: period, grades: grades, enrollmentID: enrollmentID), studentID)
+		return (Course(name: title, period: period!, grades: grades, enrollmentID: enrollmentID), studentID)
 	}
 	
 	private class func extractClassTitleAndID(html: String) -> (String, Int) {
@@ -176,7 +176,7 @@ class Parser {
 		let title =  decodeString(substring.substringToIndex(substring.rangeOfString("<")!.startIndex))
 		
 		substring = html.substringFromIndex(html.rangeOfString("(")!.endIndex)
-		let enrollmentID = substring.substringToIndex(substring.rangeOfString(")")!.startIndex).toInt()!
+		let enrollmentID = Int(substring.substringToIndex(substring.rangeOfString(")")!.startIndex))!
 		
 		return (title, enrollmentID)
 	}
@@ -188,29 +188,29 @@ class Parser {
 		scanner.scanUpToString("</td", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 		
-		if let grade = (stringBuffer! as String).toInt() {
+		if let grade = Int((stringBuffer! as String)) {
 			return (grade, nil, nil)
 		}
 		else if stringBuffer!.length == 0 {
 			return (nil, nil, nil)
 		}
 		
-		scanner = NSScanner(string: stringBuffer!)
+		scanner = NSScanner(string: stringBuffer! as String)
 		
 		 // Now scanning this <a href="StudentAssignments.aspx?EnrollmentId=0&amp;TermId=0&amp;StudentId=0&amp;H=G">0</a>
 		
 		scanner.scanUpToString("TermId=", intoString: nil)
 		scanner.scanUpToString("&", intoString: &stringBuffer) // TermID=0
-		stringBuffer = stringBuffer?.substringFromIndex(countElements("TermId="))
+		stringBuffer = stringBuffer?.substringFromIndex(String("TermId=").characters.count)
 		
-		let termID = (stringBuffer! as String).toInt()!
+		let termID = Int((stringBuffer! as String))!
 		
 		scanner.scanUpToString("StudentId=", intoString: nil)
 		scanner.scanUpToString("&", intoString: &stringBuffer)
 		
-		stringBuffer = stringBuffer?.substringFromIndex(countElements("StudentId="))
+        stringBuffer = stringBuffer?.substringFromIndex(String("StudentId=").characters.count);
 		
-		let studentID = (stringBuffer! as String).toInt()!
+		let studentID = Int((stringBuffer! as String))!
 		
 		scanner.scanUpToString(">", intoString: nil)
 		scanner.scanUpToString("<", intoString: &stringBuffer)
@@ -220,7 +220,7 @@ class Parser {
 			return (nil, termID, studentID)
 		}
 		else {
-			return ((stringBuffer! as String).toInt()!, termID, studentID)
+			return (Int((stringBuffer! as String))!, termID, studentID)
 		}
 	}
 	
@@ -230,42 +230,42 @@ class Parser {
 		
 		scanner.scanUpToString("assignmentId=", intoString: nil)
 		scanner.scanUpToString("&", intoString: &stringBuffer)
-		stringBuffer = stringBuffer?.substringFromIndex(countElements("assignmentId="))
+		stringBuffer = stringBuffer?.substringFromIndex(String("assignmentId=").characters.count)
 		
-		let assignmentID = (stringBuffer as String).toInt()!
+		let assignmentID = Int(stringBuffer as! String)
 		
 		scanner.scanUpToString(">", intoString: nil)
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 		
-		let title = decodeString(stringBuffer!)
+		let title = decodeString(stringBuffer! as String)
 		
 		scanner.scanString("</a></td>", intoString: nil)
 		scanner.scanUpToString(">", intoString: nil)
 		scanner.scanUpToString("<", intoString: &stringBuffer)
 		stringBuffer = stringBuffer?.substringFromIndex(1)
 		
-		let date = decodeString(stringBuffer!)
+		let date = decodeString(stringBuffer! as String)
 		
 		scanner.scanUpToString("<td>", intoString: nil)
 		scanner.scanString("<td>", intoString: nil)
 		scanner.scanUpToString("</td>", intoString: &stringBuffer)
 		
-		let category = decodeString(stringBuffer!)
+		let category = decodeString(stringBuffer! as String)
 		
 		scanner.scanUpToString("<td class=\"grade\">", intoString: nil)
 		scanner.scanString("<td class=\"grade\">", intoString: nil)
 		scanner.scanUpToString("</td>", intoString: &stringBuffer)
 		
-		let grade = (stringBuffer as String).toInt()
+		let grade = Int(stringBuffer as! String)
 		
-		return Assignment(name: title, date: date, category: category, grade: grade, assignmentID: assignmentID)
+		return Assignment(name: title, date: date, category: category, grade: grade, assignmentID: assignmentID!)
 	}
 	
 	private class func decodeString(string: String) -> String {
 		let encodedData = string.dataUsingEncoding(NSUTF8StringEncoding)!
 		let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-		let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)
+		let attributedString = try? NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
 		
 		let decodedString = attributedString!.string
 		return decodedString

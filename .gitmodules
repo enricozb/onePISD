@@ -1,0 +1,3 @@
+[submodule "onePISD/Alamofire"]
+	path = onePISD/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git

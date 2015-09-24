@@ -59,14 +59,14 @@ class MainGradeViewController: UIViewController {
 		var controllerArray : [UIViewController] = []
 		
 		for course in MainSession.session.courses()! {
-			var controller = CourseGradeTableView()
+			let controller = CourseGradeTableView()
 			controller.setCourse(course)
 			
 			controller.title = course.name
 			controllerArray.append(controller as UIViewController)
 		}
 		
-		var parameters: [String: AnyObject] = [
+		let parameters: [String: AnyObject] = [
 			"scrollMenuBackgroundColor": Colors.getColor(4),
 			"viewBackgroundColor": UIColor.clearColor(),
 			"selectionIndicatorColor": Colors.getColor(0),

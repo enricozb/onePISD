@@ -38,7 +38,10 @@ class UICardLayout : UICollectionViewLayout {
 		self.useDefaultMetricsAndInvalidate(false)
 	}
 	
-	required init(coder aDecoder: NSCoder) {
+	//required init?;?(coder aDecoder: NSCoder) {
+
+	required init?(coder aDecoder: NSCoder) {
+	    //fatalError("init(coder:) has not been implemented")
 		super.init(coder: aDecoder)
 		self.useDefaultMetricsAndInvalidate(false)
 	}
@@ -77,9 +80,9 @@ class UICardLayout : UICollectionViewLayout {
 		
 	}
 	
-	override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
+	override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
 		let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-		let selectedPaths = self.collectionView!.indexPathsForSelectedItems() as [NSIndexPath]
+		let selectedPaths = self.collectionView!.indexPathsForSelectedItems()!
 		
 		if selectedPaths.count > 0 && selectedPaths[0].isEqual(indexPath) {
 			attributes.frame = frameForSelectedCard(self.collectionView!.bounds, metrics: self.metrics)
@@ -96,12 +99,12 @@ class UICardLayout : UICollectionViewLayout {
 		return attributes
 	}
 
-	override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]? {
+	override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 		let range = rangeForVisibleCells(rect, count: self.collectionView!.numberOfItemsInSection(0), metrics: self.metrics)
 		var cells = Array<UICollectionViewLayoutAttributes>(count: range.length, repeatedValue: UICollectionViewLayoutAttributes())
 		var index = 0
 		for item in range.location..<(range.location + range.length) {
-			cells[index] = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: item, inSection: 0))
+			cells[index] = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: item, inSection: 0))!
 			index++
 		}
 		return cells
@@ -136,10 +139,10 @@ class UICardLayout : UICollectionViewLayout {
 	// MARK: Cell Positioning
 	
 	func frameForCardAtIndex(indexPath: NSIndexPath, isLast: Bool, bounds: CGRect, metrics: CellLayoutMetrics, effects: CellLayoutEffects) -> CGRect {
-		var x = (bounds.size.width - metrics.normal.size.width) / 2.0
+		let x = (bounds.size.width - metrics.normal.size.width) / 2.0
 		var y : CGFloat = CGFloat(indexPath.item) * CGFloat(metrics.collapsed.size.height - metrics.collapsed.overlap)
 		
-		var size = metrics.normal.size
+		let size = metrics.normal.size
 		
 		if (bounds.origin.y < 0.0) && (effects.inheritance > (0.0)) && (effects.bouncesTop) {
 			

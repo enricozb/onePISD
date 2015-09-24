@@ -48,7 +48,7 @@ class UICardViewController : UICollectionViewController{
 	
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("card", forIndexPath: indexPath) as UICardCell
+		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("card", forIndexPath: indexPath) as! UICardCell
 		let assignment = self.assignments[indexPath.row]
 		
 		if let grade = assignment.grade {
@@ -66,7 +66,7 @@ class UICardViewController : UICollectionViewController{
 		
 		var should = true
 		
-		for path in collectionView.indexPathsForSelectedItems() as [NSIndexPath] {
+		for path in collectionView.indexPathsForSelectedItems()! {
 			collectionView.deselectItemAtIndexPath(path, animated: true)
 			self.collectionView(collectionView, didDeselectItemAtIndexPath: path as NSIndexPath)
 			should = false
@@ -96,7 +96,7 @@ class UICardViewController : UICollectionViewController{
 		}
 		else {
 			self.assignments = self.grade!.assignments!
-			println(self.assignments)
+			print(self.assignments, terminator: "")
 			self.collectionView?.reloadData()
 		}
 	}

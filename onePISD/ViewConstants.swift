@@ -42,7 +42,7 @@ public class View: NSObject {
 	class func showWaitOverlayWithText(string: String) {
 		self.clearOverlays()
 		currentView.showWaitOverlayWithText(string)
-		println(string)
+		print(string, terminator: "")
 	}
 	class func clearOverlays() {
 		SwiftOverlays.removeAllOverlaysFromView(currentView.view)

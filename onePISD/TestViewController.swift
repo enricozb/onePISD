@@ -54,7 +54,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == segueString {
 			if let destination = segue.destinationViewController as? TestAssignmentViewController {
-				if let index = tableView.indexPathForSelectedRow()?.row {
+				if let index = tableView.indexPathForSelectedRow?.row {
 					destination.labelString = courses[index].name
 				}
 			}
@@ -66,7 +66,7 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
 		let row = indexPath.row
-		println(courses[row])
+		print(courses[row], terminator: "")
 	}
 }
 

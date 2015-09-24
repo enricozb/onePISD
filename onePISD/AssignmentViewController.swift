@@ -35,7 +35,7 @@ class AssignmentViewController : UIViewController, UITableViewDataSource, UITabl
 	let cellId = "AssignmentCell"
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as AssignmentCell
+		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! AssignmentCell
 		let row = indexPath.row
 		cell.titleLabel?.text = assignments[row].name
 		cell.titleLabel?.adjustsFontSizeToFitWidth = true

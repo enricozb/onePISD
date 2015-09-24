@@ -47,8 +47,8 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == segueId {
 			if let destination = segue.destinationViewController as? UICardViewController {
-				if let section = courseTableView.indexPathForSelectedRow()?.section {
-					if let row = courseTableView.indexPathForSelectedRow()?.row {
+				if let section = courseTableView.indexPathForSelectedRow?.section {
+					if let row = courseTableView.indexPathForSelectedRow?.row {
 						if shouldPerformSegueWithIdentifier(segueId, sender: sender) {
 							let courses = MainSession.session.courses()!
 							destination.grade = courses[section].grades[row]
@@ -59,8 +59,8 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 		}
 	}
 	
-	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-		let row = courseTableView.indexPathForSelectedRow()!.row
+	override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+		let row = courseTableView.indexPathForSelectedRow!.row
 		return (row + 1) % 5 != 0
 	}
 	
@@ -73,7 +73,7 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	// MARK: DataSource Methods
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as GradeCell
+		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! GradeCell
 		let section = indexPath.section
 		let row = indexPath.row
 		
@@ -125,7 +125,7 @@ class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITa
 	// MARK: Private Methods
 	
 	private func deselectLastCell() {
-		let indexPath = courseTableView.indexPathForSelectedRow()
+		let indexPath = courseTableView.indexPathForSelectedRow
 		if let path = indexPath {
 			courseTableView.deselectRowAtIndexPath(path, animated: true)
 		}

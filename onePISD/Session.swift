@@ -90,10 +90,10 @@ class Session {
 	/**
 		Sets the credentials (username and password) of the current session
 	
-		:param: username The username for the Session
-		:param: password The password for the Session
+		- parameter username: The username for the Session
+		- parameter password: The password for the Session
 	*/
-	func setCredentials(#username: String, password: String) {
+	func setCredentials(username username: String, password: String) {
 		self.username = username
 		self.password = password
 	}
@@ -194,7 +194,7 @@ class Session {
 	
 	private func grabGradeFormWithURL(url: String, completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Grabbing Gradebook form")
-		println("\tfrom url \(url)")
+		print("\tfrom url \(url)", terminator: "")
 		self.manager.request(.GET, url).responseString { (_, response, html_data, error) in
 			self.grade_form = Parser.getGradeFormFromHTML(html_data!)
 			self.submitGradeForm(completionHandler)
