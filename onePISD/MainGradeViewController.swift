@@ -91,6 +91,5 @@ class MainGradeViewController: UIViewController {
 		//self.tabBarController?.tabBar.barStyle = UIBarStyle.BlackTranslucent
 		self.tabBarController?.tabBar.tintColor = UIColor.blackColor()
 		self.tabBarController?.tabBar.selectedImageTintColor = Colors.getColor(0)
-		
 	}
 }

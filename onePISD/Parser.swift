@@ -24,7 +24,6 @@ class Parser {
 		return substring.substringTo(substring.length() - 32)
 	}
 	
-	
 	class func getUIDfromHTML(html: String) -> String {
 		let starting_index = html["\"uID\" value=\""] + "\"uID\" value=\"".length()
 		return html.substring(start: starting_index, end: starting_index + 50)

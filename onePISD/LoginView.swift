@@ -31,7 +31,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		self.view.endEditing(true)
 		return true
 	}
-
+    
 	@IBAction func buttonPressed(sender: AnyObject) {
 		self.view.endEditing(true)
 		self.loginButton.enabled = false

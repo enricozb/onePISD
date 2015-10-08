@@ -104,12 +104,13 @@ class Session {
 	*/
 	func login(completionHandler: (NSHTTPURLResponse?, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Loading PISD")
-		self.manager.request(.GET, url_login).responseString { (_, response, html_data, error) in
+		self.manager.request(.GET, url_login).response { (request, response, html_data, error) in
+            print(String(data: html_data!, encoding: NSUTF8StringEncoding)!)
 			if error?.code == -1009 {
-				completionHandler(response, html_data!, SessionError.noInternetConnection)
+				completionHandler(response, String(data: html_data!, encoding: NSUTF8StringEncoding)!, SessionError.noInternetConnection)
 			}
 			else {
-				self.loginWithParams(html_data!, completionHandler: completionHandler)
+				self.loginWithParams(String(data: html_data!, encoding: NSUTF8StringEncoding)!, completionHandler: completionHandler)
 			}
 		}
 	}
@@ -124,19 +125,19 @@ class Session {
 		]
 		let url = "\(url_gradeassignments) "
 		View.showWaitOverlayWithText("Loading Assignments")
-		self.manager.request(.GET, url_gradeassignments, parameters: params).responseString {
+		self.manager.request(.GET, url_gradeassignments, parameters: params).response {
 			(request, response, html_data, error) in
-			
-			let assignments = Parser.getAssignmentsFromHTML(html_data!)
+			let assignments = Parser.getAssignmentsFromHTML(String(data: html_data!, encoding: NSUTF8StringEncoding)!)
 			grade.assignments = assignments
-			completionHandler(response, html_data!, nil)
+			completionHandler(response, String(data: html_data!, encoding: NSUTF8StringEncoding)!, nil)
 		}
 	}
 	
 	func loadAttendanceSummary(completionHandler: (NSHTTPURLResponse?, String, SessionError?) -> ()) {
-		self.manager.request(.GET, url_attendancesummary).responseString { (request, response, html_data, error) in
-			println(html_data!)
-			let (viewstate, eventvalidation, pageuniqueid) = Parser.getAttendanceCredentials(html_data!)
+		self.manager.request(.GET, url_attendancesummary).response { (request, response, html_data, error) in
+            let data = String(data: html_data!, encoding: NSUTF8StringEncoding)!
+			print(data)
+			let (viewstate, eventvalidation, pageuniqueid) = Parser.getAttendanceCredentials(data)
 		}
 	}
 	
@@ -166,17 +167,18 @@ class Session {
 			"submit": "LOGIN"
 		]
 		
-		self.manager.request(.POST, url_login, parameters: params).responseString { (_, response, html_data, error) in
+		self.manager.request(.POST, url_login, parameters: params).response { (request, response, html_data, error) in
 			
 			//PARSE RESPONSE HERE; CHECK FOR WRONG PASSWORD (~11 elements = correct password, ~10 elements = incorrect password)
 			//OR CHECK FOR nil on "Set-Cookie" in response <- much better
-			
+            
+            var data = String(data: html_data!, encoding: NSUTF8StringEncoding)!
 			View.showWaitOverlayWithText("Grabbing Cookies")
-			let responseDict = response!.allHeaderFields as [String: String]
+			let responseDict = response!.allHeaderFields as! [String: String]
 			
 			if responseDict["Set-Cookie"] == nil {
 				View.clearOverlays()
-				completionHandler(response!, html_data!, SessionError.wrongCredentials)
+				completionHandler(response!, data, SessionError.wrongCredentials)
 			}
 			else {
 				self.loadMainPage(completionHandler)
@@ -186,43 +188,44 @@ class Session {
 	
 	private func loadMainPage(completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Refreshing")
-		self.manager.request(.GET, url_user).responseString { (_, response, html_data, _) in
-			let url_redirect = Parser.getRedirectfromHTML(html_data!)
-			self.grabGradeFormWithURL(url_redirect, completionHandler)
+		self.manager.request(.GET, url_user).response { (_, response, html_data, _) in
+			let url_redirect = Parser.getRedirectfromHTML(String(data: html_data!, encoding: NSUTF8StringEncoding)!)
+			self.grabGradeFormWithURL(url_redirect, completionHandler: completionHandler)
 		}
 	}
 	
 	private func grabGradeFormWithURL(url: String, completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Grabbing Gradebook form")
 		print("\tfrom url \(url)", terminator: "")
-		self.manager.request(.GET, url).responseString { (_, response, html_data, error) in
-			self.grade_form = Parser.getGradeFormFromHTML(html_data!)
+		self.manager.request(.GET, url).response { (_, response, html_data, error) in
+			self.grade_form = Parser.getGradeFormFromHTML(String(data: html_data!, encoding: NSUTF8StringEncoding)!)
 			self.submitGradeForm(completionHandler)
 		}
 	}
 	
 	private func submitGradeForm(completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Submitting Gradebook form")
-		self.manager.request(.GET, url_grades, parameters: grade_form!).responseString { (_, response, html_data, _) in
-			self.pinnacle_form = Parser.getPinnacleFormFromHTML(html_data!)
+		self.manager.request(.GET, url_grades, parameters: grade_form!).response { (_, response, html_data, _) in
+			self.pinnacle_form = Parser.getPinnacleFormFromHTML(String(data: html_data!, encoding: NSUTF8StringEncoding)!)
 			self.loadMainGradePage(completionHandler)
 		}
 	}
 	
 	private func loadMainGradePage(completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Loading Gradebook")
-		self.manager.request(.POST, url_pinnacle, parameters: pinnacle_form!).responseString { (_, response, html_data, _) in
+		self.manager.request(.POST, url_pinnacle, parameters: pinnacle_form!).response { (_, response, html_data, _) in
 			self.setSemesterGrades(completionHandler)
 		}
 	}
 	
 	private func setSemesterGrades(completionHandler: (NSHTTPURLResponse, String, SessionError?) -> ()) {
 		View.showWaitOverlayWithText("Grabbing Semester Grades")
-		self.manager.request(.GET, url_gradesummary).responseString { (_, response, html_data, _) in
-			let (courses, studentId) = Parser.getReportTableFromHTML(html_data!)
+		self.manager.request(.GET, url_gradesummary).response { (_, response, html_data, _) in
+            var data = String(data: html_data!, encoding: NSUTF8StringEncoding)!
+			let (courses, studentId) = Parser.getReportTableFromHTML(data)
 			self.course_list = courses
 			self.studentId = studentId
-			completionHandler(response!, html_data!, nil)
+			completionHandler(response!, data, nil)
 		}
 	}
 }
