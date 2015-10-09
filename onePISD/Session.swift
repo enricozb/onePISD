@@ -77,6 +77,7 @@ class Session {
 	private var pinnacle_form: [String: String]?
 	private var course_list: [Course]?
 	
+    
 	init(username: String, password: String) {
 		self.username = username
 		self.password = password

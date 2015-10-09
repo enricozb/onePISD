@@ -78,7 +78,7 @@ class LoginView : UIViewController, UITextFieldDelegate {
 		super.viewDidAppear(animated)
 		View.currentView = self
 		self.animateLogin()
-		self.debugLogin()
+		//self.debugLogin()
 	}
 	
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
