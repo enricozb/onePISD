@@ -20,14 +20,18 @@ class Grade {
 	var course : Course?
 	let termID : Int
 	let grade : Int?
-	let blank : Bool
+	var blank : Bool
 	let index : Int
 	var assignments : [Assignment]?
 	
 	init(termID: Int, grade: Int?, index: Int) {
 		self.termID = termID
 		self.grade = grade
-		self.blank = false
+		self.blank = grade == nil
 		self.index = index
+	}
+	
+	func isSemesterGrade() -> Bool {
+		return self.index % 5 == 4
 	}
 }

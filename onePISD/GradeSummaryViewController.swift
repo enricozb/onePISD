@@ -1,134 +1,112 @@
-//
-//  GradeSummaryTableViewController.swift
-//  onePISD
-//
-//  Created by Enrico Borba on 2/23/15.
-//  Copyright (c) 2015 Enrico Borba. All rights reserved.
-//
+/**
+* GradeSummaryViewController.swift
+* Holds the main "Grades" navigation. Allows for the viewing of
+* any of the available SixWeeks.
+* onePISD
+*
+* @author Enrico Borba
+* Period: 2
+* Date: 5/18/15
+* Copyright (c) 2015 Enrico Borba. All rights reserved.
+*/
 
-import Foundation
+
 import UIKit
 
-class GradeSummaryViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GradeSummaryViewController : UIViewController, CAPSPageMenuDelegate {
+	var pageMenu : CAPSPageMenu?
+	var sixWeeks : [SixWeek]?
 	
-	@IBOutlet var courseTableView: UITableView!
-	let cellId = "CourseGradeCell"
+	/**
+	* Called when the view is brought to the front of the application.
+	* Clears any selected cell, and sets itself as the current view
+	* in case of any overlayed animations.
+	*/
+	override func viewDidAppear(animated: Bool) {
+		clearCells()
+		View.currentView = self
+	}
 	
-	// MARK: Helper Methods
+	/**
+	* Called when the view is finished being constructed/loaded.
+	* Called only once. Initializes the main components of the view,
+	* including the page menu that holds the SixWeeksViews, and the 
+	* NavigationBar.
+	*/
+	override func viewDidLoad() {
+		initSixWeekTables()
+		initPageMenu()
+		self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent;
+		self.navigationItem.title = "Grade Summary"
+	}
 	
-	func getTermLabel(term: Int) -> String {
-		switch(term) {
-		case 0 : return "1st Six Weeks:"
-		case 1 : return "2nd Six Weeks:"
-		case 2 : return "3rd Six Weeks:"
-		case 3 : return "Semester Exam:"
-		case 4 : return "1st Semester:"
-		case 5 : return "4th Six Weeks:"
-		case 6 : return "5th Six Weeks:"
-		case 7 : return "6th Six Weeks:"
-		case 8 : return "Semester Exam:"
-		case 9 : return "2nd Semester:"
-		default: assert(false, "Term Error \(term)")
+	/**
+	* Clears all cells in all SixWeekTableViews within the pageMenu.
+	*/
+	private func clearCells() {
+		if pageMenu != nil {
+			let index = pageMenu!.currentPageIndex
+			let sixWeekView = pageMenu!.controllerArray[index] as! SixWeekTableView
+			sixWeekView.clearCells()
 		}
 	}
 	
-	// MARK: Delegate Methods
-	
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		return MainSession.session.courses()!.count
-	}
-	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return MainSession.session.courses()![section].grades.count
-	}
-	
-	let segueId = "SegueToAssignments"
-	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == segueId {
-			if let destination = segue.destinationViewController as? UICardViewController {
-				if let section = courseTableView.indexPathForSelectedRow()?.section {
-					if let row = courseTableView.indexPathForSelectedRow()?.row {
-						if shouldPerformSegueWithIdentifier(segueId, sender: sender) {
-							let courses = MainSession.session.courses()!
-							destination.grade = courses[section].grades[row]
-						}
-					}
+	/** 
+	* Creates and fills the pageMenu that holds each SixWeekTableView
+	* Each SixWeekTableView is configured with a reference to its grades,
+	* which may change while they are loaded asynchronously.
+	*/
+	func initPageMenu() {
+		var controllers = [UIViewController]()
+		if let _ = sixWeeks {
+			for sixWeek in sixWeeks! {
+				if sixWeek.blank {
+					println("blank")
+					continue
 				}
+				let tableview = SixWeekTableView()
+				tableview.setGradeData(sixWeek)
+				tableview.gradeView = self
+				controllers.append(tableview)
 			}
 		}
-	}
-	
-	override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-		let row = courseTableView.indexPathForSelectedRow()!.row
-		return (row + 1) % 5 != 0
-	}
-	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		if (indexPath.row + 1) % 5 == 0 {
-			tableView.deselectRowAtIndexPath(indexPath, animated: true)
-		}
-	}
-	
-	// MARK: DataSource Methods
-	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as GradeCell
-		let section = indexPath.section
-		let row = indexPath.row
-		
-		let termDescription = getTermLabel(row)
-		cell.termLabel?.text = "\(termDescription)"
-		cell.gradeLabel?.text = "-"
-		if let grade = MainSession.session.courses()![section].grades[row].grade {
-			cell.gradeLabel?.text = "\(grade)"
-		}
-		if (row + 1) % 5 == 0 {
-			cell.accessoryType = UITableViewCellAccessoryType.None
-		}
 		else {
-			cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+			fatalError("Six Weeks empty in GradeSummaryViewController")
 		}
-		return cell
-	}
-	
-	func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return MainSession.session.courses()![section].name
-	}
-	
-	func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 30
-	}
-	
-	// MARK: ViewController Methods
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		self.navigationItem.title = "Grade Summary"
 		
-		self.edgesForExtendedLayout = UIRectEdge.All
-		courseTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, self.tabBarController!.tabBar.frame.height, 0);
-		courseTableView.delegate = self
-		courseTableView.dataSource = self
+		var parameters: [String: AnyObject] =
+			[
+				"menuItemSeparatorWidth": 4.3,
+				"menuItemSeparatorPercentageHeight": 0.1,
+				"addBottomMenuHairline": false,
+				"menuItemWidthBasedOnTitleTextWidth": true,
+				"viewBackgroundColor": Colors.grayscale(1),
+				"scrollMenuBackgroundColor": Colors.grayscale(2),
+				"selectionIndicatorColor": Colors.grayscale(3),
+				"unselectedMenuItemLabelColor": Colors.grayscale(0),
+				"selectedMenuItemLabelColor": Colors.grayscale(3),
+				"menuItemFont": UIFont(name: "HelveticaNeue-Light", size: 15)!
+			]
+		pageMenu = CAPSPageMenu(viewControllers: controllers, frame: CGRectMake(0.0, 0.0, self.view.frame.width, self.view.frame.height), options: parameters)
+		pageMenu?.moveToPage(controllers.count - 1, duration: 0)
+		pageMenu!.delegate = self
+		self.view.addSubview(pageMenu!.view)
+
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-		View.currentView = self
-		self.deselectLastCell()
+	/**
+	* Rearranges the grades in the sixWeeks format, instead of by course.
+	*/
+	private func initSixWeekTables() {
+		sixWeeks = MainSession.session.sixWeeks()
 	}
 	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
+	/**
+	* Called when the user swipes to a new SixWeekTableView, and clears
+	* the cells in the view that is soon to be shown.
+	*/
+	func willMoveToPage(controller: UIViewController, index: Int) {
+		let sixWeekTableView = controller as! SixWeekTableView
+		sixWeekTableView.clearCells()
 	}
-	
-	// MARK: Private Methods
-	
-	private func deselectLastCell() {
-		let indexPath = courseTableView.indexPathForSelectedRow()
-		if let path = indexPath {
-			courseTableView.deselectRowAtIndexPath(path, animated: true)
-		}
-	}
-	
 }

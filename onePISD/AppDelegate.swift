@@ -13,29 +13,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	private func setGlobalUI() {
+		setNavBar()
+		setTabBar()
+	}
 	
-		UITabBarItem.appearance().setTitleTextAttributes(
+	private func setNavBar() {
+		UINavigationBar.appearance().shadowImage = UIImage()
+		UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+		UINavigationBar.appearance().barTintColor = Colors.grayscale(2)
+		UINavigationBar.appearance().tintColor = Colors.grayscale(4)
+		UINavigationBar.appearance().translucent = false
+		UINavigationBar.appearance().titleTextAttributes =
 			[
-				NSForegroundColorAttributeName: Colors.getColor(2)
-			], forState: UIControlState.Normal)
-		UITabBarItem.appearance().setTitleTextAttributes(
-			[
-				NSForegroundColorAttributeName: Colors.getColor(0)
+				NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!,
+				NSForegroundColorAttributeName: Colors.grayscale(4)
+		]
+	}
+	
+	private func setTabBar() {
+		UITabBar.appearance().shadowImage = UIImage()
+		UITabBar.appearance().backgroundImage = UIImage()
+		UITabBar.appearance().barTintColor = Colors.grayscale(2)
+		UITabBar.appearance().translucent = false
+		UITabBarItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName: Colors.grayscale(4)
 			], forState: UIControlState.Selected)
-		
-		//UINavigationBar.appearance().barTintColor = UIColor(red: 52/255.0, green: 73/255.0, blue: 94/255.0, alpha: 1)
-		//UINavigationBar.appearance().translucent = false
-		// Override point for customization after application launch.
-		/*
-		var navigationBarAppearace = UINavigationBar.appearance()
-		
-		navigationBarAppearace.tintColor = UIColor.whiteColor()
-		navigationBarAppearace.barTintColor = UIColor.lightGrayColor()
-		*/
-		
-		//UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-		
+		UITabBarItem.appearance().setTitleTextAttributes([ NSForegroundColorAttributeName: Colors.grayscale(0)
+			], forState: UIControlState.Normal)
+	}
+	
+	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		setGlobalUI()
 		return true
 	}
 

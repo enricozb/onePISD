@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,36 +9,9 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="513" height="611"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG-median-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vu6-gb-jNU">
-                    <rect key="frame" x="83" y="0.0" width="346" height="611"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Vu6-gb-jNU" secondAttribute="height" multiplier="346:611" id="XWg-Lz-W3P"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ezl-WS-D3y">
-                    <rect key="frame" x="136" y="268" width="240" height="76"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ezl-WS-D3y" secondAttribute="height" multiplier="60:19" id="Ctt-fE-fqC"/>
-                        <constraint firstAttribute="height" constant="76" id="vZa-31-2bk"/>
-                    </constraints>
-                </imageView>
-            </subviews>
-            <constraints>
-                <constraint firstAttribute="centerX" secondItem="Vu6-gb-jNU" secondAttribute="centerX" constant="0.5" id="2QL-lh-SBD"/>
-                <constraint firstAttribute="centerY" secondItem="Vu6-gb-jNU" secondAttribute="centerY" id="38U-y3-jUt"/>
-                <constraint firstAttribute="centerX" secondItem="ezl-WS-D3y" secondAttribute="centerX" constant="0.5" id="a7t-T1-sFB"/>
-                <constraint firstAttribute="centerY" secondItem="ezl-WS-D3y" secondAttribute="centerY" constant="-0.5" id="k18-Da-Jox"/>
-                <constraint firstItem="Vu6-gb-jNU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ojO-3Q-bhO"/>
-                <constraint firstAttribute="centerY" secondItem="ezl-WS-D3y" secondAttribute="centerY" constant="-0.5" id="uGn-bU-TSN"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="534.5" y="537.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="BG-median-1" width="320" height="568"/>
-        <image name="Logo.png" width="640" height="200"/>
-    </resources>
 </document>

@@ -24,6 +24,8 @@ class Assignment {
 		self.category = category
 		self.grade = grade
 		self.assignmentID = assignmentID
+		self.weight = nil
+		self.comment = nil
 	}
 	
 	// MARK: Sorting Closures

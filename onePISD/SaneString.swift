@@ -3,7 +3,7 @@ import Foundation
 extension String {
 	
 	func length() -> Int {
-		return countElements(self)
+		return count(self)
 	}
 	
 	func reverse() -> String {
